@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class Entities {
 	private Hashtag[] hashtags;
 
-	public Entities(){}
+    public Entities() {}
  
 	public Entities(Hashtag[] hashtags) {
 		super();
