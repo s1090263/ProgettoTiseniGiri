@@ -28,4 +28,5 @@ public class Metadata {
 		this.result_type = result_type;
 	}
 	
+	
 }
