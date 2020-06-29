@@ -8,6 +8,8 @@ public class Hashtag {
 	
 	private int[] indices; //An array of integers indicating the offsets within the Tweet text where the hashtag begins and ends. The first integer represents the location of the # character in the Tweet text string. The second integer represents the location of the first character after the hashtag
 	
+	public Hashtag() {
+	}
 	
 	public Hashtag(String text, int[] indices) {
 		super();

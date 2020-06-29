@@ -16,6 +16,9 @@ public class User {
 	
 	private boolean verified; //indica se l'utente ha l'account verificato
 
+	public User() {
+	}
+	
 	public User(String id, String name, int followers_count, int friends_count, int favourites_count,
 			int statuses_count, boolean verified) {
 		super();
