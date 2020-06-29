@@ -8,7 +8,7 @@ public class Tweet {
 	
 	private String created_at; //quando il tweet è stato creato
 	
-	private Map<String, String> metadata; //oggetto della classe metadata che contiene i metadati del tweet
+	private Map<String, String> metadata; //Metadata contiene iso_language_code e result_type
 	
 	private User user; //oggetto della classe user che contiene l'utente che ha creato il tweet
 	
