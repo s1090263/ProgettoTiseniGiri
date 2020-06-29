@@ -1,4 +1,4 @@
-package com.TiseniGiri.ProgettoTiseniGiri.filter.Interfaces;
+package com.TiseniGiri.ProgettoTiseniGiri.Filter.Interfaces;
 
 import java.util.List;
 import com.TiseniGiri.ProgettoTiseniGiri.Model.Tweet;
