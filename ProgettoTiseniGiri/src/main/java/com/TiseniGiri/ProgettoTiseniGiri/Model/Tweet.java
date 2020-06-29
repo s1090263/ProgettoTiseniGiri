@@ -20,9 +20,9 @@ public class Tweet {
 	private String lang; //linguaggio del tweet (se il linguaggio non è stato riconosciuto viene scritto "und")
 	
 	private Hashtag[] hashtags; //vettore degli hashtags del tweet
-	
+
 	public Tweet(String id, String created_at, Map<String, String> metadata, User user, int retweet_count,
-			int favorite_count, String lang) {
+			int favorite_count, String lang, Hashtag[] hashtags) {
 		super();
 		this.id = id;
 		this.created_at = created_at;
@@ -31,6 +31,7 @@ public class Tweet {
 		this.retweet_count = retweet_count;
 		this.favorite_count = favorite_count;
 		this.lang = lang;
+		this.hashtags = hashtags;
 	}
 
 	public String getId() {
