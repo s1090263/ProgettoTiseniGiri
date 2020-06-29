@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class Tweet {
 	
-	private String id; //id del tweet (id_str)
+	private long id; //id del tweet
 	
 	private String created_at; //quando il tweet è stato creato
 	
@@ -19,10 +19,13 @@ public class Tweet {
 	
 	private String lang; //linguaggio del tweet (se il linguaggio non è stato riconosciuto viene scritto "und")
 	
-	private Hashtag[] hashtags; //vettore degli hashtags del tweet
+	private Entities entities; //oggetto delle entità del tweet
 
-	public Tweet(String id, String created_at, Map<String, String> metadata, User user, int retweet_count,
-			int favorite_count, String lang, Hashtag[] hashtags) {
+	public Tweet() {		
+	}
+	
+	public Tweet(long id, String created_at, Map<String, String> metadata, User user, int retweet_count,
+			int favorite_count, String lang, Entities entities) {
 		super();
 		this.id = id;
 		this.created_at = created_at;
@@ -31,14 +34,14 @@ public class Tweet {
 		this.retweet_count = retweet_count;
 		this.favorite_count = favorite_count;
 		this.lang = lang;
-		this.hashtags = hashtags;
+		this.entities = entities;
 	}
 
-	public String getId() {
+	public long getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 
@@ -91,19 +94,17 @@ public class Tweet {
 		this.lang = lang;
 	}
 
-	
-	public Hashtag[] getHashtags() {
-		return hashtags;
+	public Entities getEntities() {
+		return entities;
 	}
 
-	public void setHashtags(Hashtag[] hashtags) {
-		this.hashtags = hashtags;
+	public void setEntities(Entities entities) {
+		this.entities = entities;
 	}
 
 	@Override
 	public String toString() {
 		return "Tweet [id=" + id + ", created_at=" + created_at + ", metadata=" + metadata + ", user=" + user
-				+ ", retweet_count=" + retweet_count + ", favorite_count=" + favorite_count + ", lang=" + lang
-				+ ", hashtags=" + Arrays.toString(hashtags) + "]";
+				+ ", retweet_count=" + retweet_count + ", favorite_count=" + favorite_count + ", lang=" + lang + "]";
 	}	
 }
