@@ -83,4 +83,10 @@ public class Tweet {
 	public void setLang(String lang) {
 		this.lang = lang;
 	}
+
+	@Override
+	public String toString() {
+		return "Tweet [id=" + id + ", created_at=" + created_at + ", metadata=" + metadata + ", user=" + user
+				+ ", retweet_count=" + retweet_count + ", favorite_count=" + favorite_count + ", lang=" + lang + "]";
+	}
 }

@@ -83,4 +83,11 @@ public class User {
 	public void setVerified(boolean verified) {
 		this.verified = verified;
 	}
+
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", name=" + name + ", followers_count=" + followers_count + ", friends_count="
+				+ friends_count + ", favourites_count=" + favourites_count + ", statuses_count=" + statuses_count
+				+ ", verified=" + verified + "]";
+	}	
 }

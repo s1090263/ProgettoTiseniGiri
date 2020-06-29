@@ -27,6 +27,12 @@ public class Metadata {
 	public void setResult_type(String result_type) {
 		this.result_type = result_type;
 	}
+
+	@Override
+	public String toString() {
+		return "Metadata [iso_language_code=" + iso_language_code + ", result_type=" + result_type + "]";
+	}
+	
 	
 	
 }
