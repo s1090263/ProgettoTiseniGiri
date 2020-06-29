@@ -1,5 +1,6 @@
 package com.TiseniGiri.ProgettoTiseniGiri.Model;
 
+import java.util.Arrays;
 import java.util.Map;
 
 public class Tweet {
@@ -17,6 +18,8 @@ public class Tweet {
 	private int favorite_count; //numero delle volte che il tweet è stato mipiaciato
 	
 	private String lang; //linguaggio del tweet (se il linguaggio non è stato riconosciuto viene scritto "und")
+	
+	private Hashtag[] hashtags; //vettore degli hashtags del tweet
 	
 	public Tweet(String id, String created_at, Map<String, String> metadata, User user, int retweet_count,
 			int favorite_count, String lang) {
@@ -87,9 +90,19 @@ public class Tweet {
 		this.lang = lang;
 	}
 
+	
+	public Hashtag[] getHashtags() {
+		return hashtags;
+	}
+
+	public void setHashtags(Hashtag[] hashtags) {
+		this.hashtags = hashtags;
+	}
+
 	@Override
 	public String toString() {
 		return "Tweet [id=" + id + ", created_at=" + created_at + ", metadata=" + metadata + ", user=" + user
-				+ ", retweet_count=" + retweet_count + ", favorite_count=" + favorite_count + ", lang=" + lang + "]";
+				+ ", retweet_count=" + retweet_count + ", favorite_count=" + favorite_count + ", lang=" + lang
+				+ ", hashtags=" + Arrays.toString(hashtags) + "]";
 	}	
 }
