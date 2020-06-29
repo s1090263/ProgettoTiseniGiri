@@ -1,6 +1,5 @@
 package com.TiseniGiri.ProgettoTiseniGiri.Model;
 
-import java.util.Arrays;
 import java.util.Map;
 
 public class Tweet {
@@ -105,6 +104,7 @@ public class Tweet {
 	@Override
 	public String toString() {
 		return "Tweet [id=" + id + ", created_at=" + created_at + ", metadata=" + metadata + ", user=" + user
-				+ ", retweet_count=" + retweet_count + ", favorite_count=" + favorite_count + ", lang=" + lang + "]";
+				+ ", retweet_count=" + retweet_count + ", favorite_count=" + favorite_count + ", lang=" + lang
+				+ ", entities=" + entities + "]";
 	}	
 }
