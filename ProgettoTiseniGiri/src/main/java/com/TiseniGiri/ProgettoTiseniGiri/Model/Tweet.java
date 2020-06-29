@@ -1,12 +1,14 @@
 package com.TiseniGiri.ProgettoTiseniGiri.Model;
 
+import java.util.Map;
+
 public class Tweet {
 	
 	private String id; //id del tweet (id_str)
 	
 	private String created_at; //quando il tweet è stato creato
 	
-	private Metadata metadata; //oggetto della classe metadata che contiene i metadati del tweet
+	private Map<String, String> metadata; //oggetto della classe metadata che contiene i metadati del tweet
 	
 	private User user; //oggetto della classe user che contiene l'utente che ha creato il tweet
 	
@@ -16,8 +18,8 @@ public class Tweet {
 	
 	private String lang; //linguaggio del tweet (se il linguaggio non è stato riconosciuto viene scritto "und")
 	
-	public Tweet(String id, String created_at, Metadata metadata, User user, int retweet_count, int favorite_count,
-			String lang) {
+	public Tweet(String id, String created_at, Map<String, String> metadata, User user, int retweet_count,
+			int favorite_count, String lang) {
 		super();
 		this.id = id;
 		this.created_at = created_at;
@@ -44,11 +46,12 @@ public class Tweet {
 		this.created_at = created_at;
 	}
 
-	public Metadata getMetadata() {
+	
+	public Map<String, String> getMetadata() {
 		return metadata;
 	}
 
-	public void setMetadata(Metadata metadata) {
+	public void setMetadata(Map<String, String> metadata) {
 		this.metadata = metadata;
 	}
 
@@ -88,5 +91,5 @@ public class Tweet {
 	public String toString() {
 		return "Tweet [id=" + id + ", created_at=" + created_at + ", metadata=" + metadata + ", user=" + user
 				+ ", retweet_count=" + retweet_count + ", favorite_count=" + favorite_count + ", lang=" + lang + "]";
-	}
+	}	
 }
