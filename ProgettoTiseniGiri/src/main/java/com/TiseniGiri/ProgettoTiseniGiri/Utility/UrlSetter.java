@@ -1,4 +1,4 @@
-package com.TiseniGiri.ProgettoTiseniGiri;
+package com.TiseniGiri.ProgettoTiseniGiri.Utility;
 
 public class UrlSetter {
 	private static String url = "https://wd4hfxnxxa.execute-api.us-east-2.amazonaws.com/dev/api/1.1/search/tweets.json?q=univpm&count=100" ;
