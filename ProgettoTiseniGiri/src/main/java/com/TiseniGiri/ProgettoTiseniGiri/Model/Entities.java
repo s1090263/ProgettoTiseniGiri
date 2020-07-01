@@ -7,7 +7,7 @@ public class Entities {
 
     public Entities() {
     }
- 
+    
 	public Entities(Hashtag[] hashtags) {
 		super();
 		this.hashtags = hashtags;
