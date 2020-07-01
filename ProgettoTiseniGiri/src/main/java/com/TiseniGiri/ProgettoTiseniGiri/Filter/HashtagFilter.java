@@ -11,7 +11,7 @@ public class HashtagFilter implements Filter<Hashtag> {
 	private String identifier;
 	
 	@Override
-	public List<Tweet> filter_general(List<Tweet> list, Integer num_of) {
+	public List<Tweet> generalFilter(List<Tweet> list, Integer num_of) {
 		// TODO Auto-generated method stub
 		List<Tweet> list1 = new ArrayList<Tweet>(list);
 		list1.removeIf(t-> t.getEntities().getHashtags().length < num_of);

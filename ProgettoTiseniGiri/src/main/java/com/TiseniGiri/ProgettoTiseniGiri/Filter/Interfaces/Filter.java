@@ -5,5 +5,5 @@ import com.TiseniGiri.ProgettoTiseniGiri.Model.Tweet;
 
 public interface Filter<T> {
 	
-	public List<Tweet> filter_general(List<Tweet> list, Integer x);
+	public List<Tweet> generalFilter(List<Tweet> list, Integer x);
 }
