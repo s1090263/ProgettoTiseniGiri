@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.TiseniGiri.ProgettoTiseniGiri.Model.Tweet;
 
-public interface ParticularFilter<Type1,Type2> extends Filter {
+public interface ParticularFilter<Type1,Type2,T> extends Filter<T> {
 	
 	public List<Tweet> stringFilter(List<Tweet> list, Type1 variable);
 	
