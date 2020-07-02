@@ -26,7 +26,7 @@ public class FilterService extends GeneralService {
 		    String parameter = entry.getKey();
 		    String filter = entry.getValue().get(0);
 		    int num = Integer.parseInt(entry.getValue().get(1));
-		    tweets = Executer(tweets, parameter, filter, num);
+		    tweets = Execute(tweets, parameter, filter, num);
 		}
 		
 		return tweets;		
@@ -34,7 +34,7 @@ public class FilterService extends GeneralService {
 	
 	
 	
-	public static List<Tweet> Executer(List<Tweet> tweets, String parameter, String filter, int num) throws ClassNotFoundException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException, SecurityException {
+	public static List<Tweet> Execute(List<Tweet> tweets, String parameter, String filter, int num) throws ClassNotFoundException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException, SecurityException {
 		Class<?> typeClass = Class.forName("com.TiseniGiri.ProgettoTiseniGiri.Filter." + parameter + "Filter");
 		Object typeFilter = typeClass.getDeclaredConstructor().newInstance();
 		Method method = typeClass.getDeclaredMethod(filter, List.class, int.class);				
