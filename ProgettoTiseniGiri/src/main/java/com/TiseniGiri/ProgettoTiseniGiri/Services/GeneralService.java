@@ -8,7 +8,7 @@ import com.TiseniGiri.ProgettoTiseniGiri.Utility.Parser;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 
-public class GeneralService {
+public abstract class GeneralService {
 	
 	public static List<Tweet> getTweets(String url) throws JsonMappingException, JsonProcessingException{
 		String data = Downloader.downloadData(url);
