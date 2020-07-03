@@ -10,7 +10,7 @@ public class ExecuterForServices {
 	public List<Tweet> ExecuteFilter(List<Tweet> tweets, String parameter, String filter, Object par) throws ClassNotFoundException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException, SecurityException {
 		Class<?> typeClass = Class.forName("com.TiseniGiri.ProgettoTiseniGiri.Filter." + parameter + "Filter");
 		Object typeFilter = typeClass.getDeclaredConstructor().newInstance();
-		Method method = typeClass.getDeclaredMethod(filter, List.class, int.class);				
+		Method method = typeClass.getDeclaredMethod(filter, List.class, String.class);				
 		List<Tweet> filteredTweets= (List<Tweet>) method.invoke(typeFilter, tweets, par);
 		return filteredTweets;
 	}
@@ -18,7 +18,7 @@ public class ExecuterForServices {
 	public List<Tweet> ExecuteFilter(List<Tweet> tweets, String parameter, String filter, Object par1, Object par2) throws ClassNotFoundException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException, SecurityException {
 		Class<?> typeClass = Class.forName("com.TiseniGiri.ProgettoTiseniGiri.Filter." + parameter + "Filter");
 		Object typeFilter = typeClass.getDeclaredConstructor().newInstance();
-		Method method = typeClass.getDeclaredMethod(filter, List.class, int.class,int.class);				
+		Method method = typeClass.getDeclaredMethod(filter, List.class, Object.class,Object.class);				
 		List<Tweet> filteredTweets= (List<Tweet>) method.invoke(typeFilter, tweets, par1,par2);
 		return filteredTweets;
 	}

@@ -3,10 +3,10 @@ package com.TiseniGiri.ProgettoTiseniGiri.Filter;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.TiseniGiri.ProgettoTiseniGiri.Filter.Interfaces.Filter;
+import com.TiseniGiri.ProgettoTiseniGiri.Filter.Interfaces.NumericalFilter;
 import com.TiseniGiri.ProgettoTiseniGiri.Model.Tweet;
 
-public class FavoritesFilter implements Filter {
+public class FavoritesFilter implements NumericalFilter {
 	
 	String id= "favorites";
 

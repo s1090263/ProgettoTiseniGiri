@@ -32,7 +32,7 @@ public class FilterService extends GeneralService {
 		    
 		    ArrayList<Object> num = new ArrayList<Object>();
 			for (int i=0; i < entry.getValue().size()-1; i++)
-				num.add(i,(int)entry.getValue().get(i+1));
+				num.add(i,entry.getValue().get(i+1));
 			if(num.size() == 1)
 			    tweets = executer.ExecuteFilter(tweets, parameter, filter, num.get(0));
 			else 
