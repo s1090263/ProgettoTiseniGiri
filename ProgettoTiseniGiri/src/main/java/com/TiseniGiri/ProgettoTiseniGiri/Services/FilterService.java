@@ -21,21 +21,25 @@ public class FilterService extends GeneralService {
 	public static List<Tweet> getFilteredTweets(String url,String filters) throws JsonMappingException, JsonProcessingException, ClassNotFoundException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException, SecurityException{
 		List<Tweet> tweets = getTweets(url);
 		
-		Map<String,List<String>> request = null;
+		Map<String,List<Object>> request = null;
 		ObjectMapper mapper = new ObjectMapper();
 		
 		request = mapper.readValue(filters,Map.class);
 		
-		for (Map.Entry<String, List<String>> entry : request.entrySet()) {
+		for (Map.Entry<String, List<Object>> entry : request.entrySet()) {
 		    String parameter = entry.getKey();
-		    String filter = entry.getValue().get(0);
-		    ArrayList<Integer> num = new ArrayList<Integer>();
-		    for (int i=0; i < entry.getValue().size()-1; i++)
-		    	num.add(i,Integer.parseInt(entry.getValue().get(i+1)));
+		    String filter = entry.getValue().get(0).toString();
+		    
+		    ArrayList<Object> num = new ArrayList<Object>();
+			for (int i=0; i < entry.getValue().size()-1; i++)
+				num.add(i,(int)entry.getValue().get(i+1));
 			if(num.size() == 1)
-		    	tweets = executer.ExecuteFilter(tweets, parameter, filter, num.get(0));
-		    else 
-		    	tweets = executer.ExecuteFilter(tweets, parameter, filter, num.get(0),num.get(1));
+			    tweets = executer.ExecuteFilter(tweets, parameter, filter, num.get(0));
+			else 
+			    tweets = executer.ExecuteFilter(tweets, parameter, filter, num.get(0),num.get(1));
+
+		    	
+			
 		}
 		
 		return tweets;		
