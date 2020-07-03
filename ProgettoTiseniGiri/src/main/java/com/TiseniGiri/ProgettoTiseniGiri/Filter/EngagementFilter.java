@@ -14,7 +14,7 @@ public class EngagementFilter{
 	Comparator<Tweet> cmp = c.thenComparing(f);
 	NumberFilter n = new NumberFilter();
 	
-	public List<Tweet> sortForRetweets(List<Tweet> list, int num){
+	public List<Tweet> sortForRetweets(List<Tweet> list, Object num){
 		list.sort(cmp);
 		list = n.getNumberOfTweets(list, num);
 		return list;

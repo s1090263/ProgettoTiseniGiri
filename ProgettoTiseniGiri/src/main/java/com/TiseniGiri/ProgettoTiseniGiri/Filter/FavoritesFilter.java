@@ -11,27 +11,27 @@ public class FavoritesFilter implements NumericalFilter {
 	String id= "favorites";
 
 	@Override
-	public List<Tweet> greater(List<Tweet> list, int num) {
+	public List<Tweet> greater(List<Tweet> list, Object num) {
 		List<Tweet> list1 = new ArrayList<Tweet>(list);
-		list1.removeIf(t-> t.getFavorite_count() <= num);
+		list1.removeIf(t-> t.getFavorite_count() <= (int)num);
 		return list1;
 	}
 
 	@Override
-	public List<Tweet> lower(List<Tweet> list, int num) {
+	public List<Tweet> lower(List<Tweet> list, Object num) {
 		List<Tweet> list1 = new ArrayList<Tweet>(list);
-		list1.removeIf(t-> t.getFavorite_count() >= num);
+		list1.removeIf(t-> t.getFavorite_count() >= (int)num);
 		return list1;
 	}
 
 	@Override
-	public List<Tweet> equal(List<Tweet> list, int num) {
+	public List<Tweet> equal(List<Tweet> list, Object num) {
 		List<Tweet> list1 = new ArrayList<Tweet>(list);
-		list1.removeIf(t-> t.getFavorite_count() != num);
+		list1.removeIf(t-> t.getFavorite_count() != (int)num);
 		return list1;
 	}
 	@Override
-	public List<Tweet> between(List<Tweet> list, int top, int bottom){
+	public List<Tweet> between(List<Tweet> list, Object top, Object bottom){
 		List<Tweet> list1 = new ArrayList<Tweet>(list);
 		list1 = greater(list, bottom);
 		list1 = lower(list1,top);
