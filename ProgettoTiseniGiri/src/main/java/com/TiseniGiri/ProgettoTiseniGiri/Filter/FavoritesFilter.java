@@ -30,5 +30,12 @@ public class FavoritesFilter implements Filter {
 		list1.removeIf(t-> t.getFavorite_count() != num);
 		return list1;
 	}
+	@Override
+	public List<Tweet> between(List<Tweet> list, int top, int bottom){
+		List<Tweet> list1 = new ArrayList<Tweet>(list);
+		list1 = greater(list, bottom);
+		list1 = lower(list1,top);
+		return list1;
+	}
 
 }

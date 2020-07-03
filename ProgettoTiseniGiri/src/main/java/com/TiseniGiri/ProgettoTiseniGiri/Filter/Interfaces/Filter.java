@@ -9,6 +9,6 @@ public interface Filter{
 	public List<Tweet> greater(List<Tweet> list, int num);
 	public List<Tweet> lower(List<Tweet> list,	int num);
 	public List<Tweet> equal(List<Tweet> list,	int num);
-	public List<Tweet> between(List<Tweet> list, int num);	
+	public List<Tweet> between(List<Tweet> list, int top, int bottom);	
 	
 }
