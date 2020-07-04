@@ -7,8 +7,8 @@ import com.TiseniGiri.ProgettoTiseniGiri.Exceptions.ExtremesException;
 import com.TiseniGiri.ProgettoTiseniGiri.Filter.Interfaces.NumericalFilter;
 import com.TiseniGiri.ProgettoTiseniGiri.Model.Tweet;
 
-public class FavoritesFilter implements NumericalFilter {
-
+public class FavoritesFilter extends NumericalFilter {
+	String id = "ciao";
 	@Override
 	public List<Tweet> greater(List<Tweet> list, Object num) {
 		List<Tweet> list1 = new ArrayList<Tweet>(list);
