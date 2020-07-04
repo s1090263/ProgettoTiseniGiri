@@ -4,23 +4,16 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
-
-import com.TiseniGiri.ProgettoTiseniGiri.Exceptions.ExtremesException;
 import com.TiseniGiri.ProgettoTiseniGiri.Model.Tweet;
 
 public class ExecuterForServices {
 	
 	public List<Tweet> ExecuteFilter(List<Tweet> tweets, String parameter, String filter, Object par) throws ClassNotFoundException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException, SecurityException {
 		List<Tweet> filteredTweets = new ArrayList<Tweet>();
-		try {
-			Class<?> typeClass = Class.forName("com.TiseniGiri.ProgettoTiseniGiri.Filter." + parameter + "Filter");
-			Object typeFilter = typeClass.getDeclaredConstructor().newInstance();
-			Method method = typeClass.getMethod(filter, List.class, Object.class);				
-			filteredTweets= (List<Tweet>) method.invoke(typeFilter, tweets, par);
-		}
-		catch(ExtremesException e) {
-			e.printStackTrace();
-		}
+		Class<?> typeClass = Class.forName("com.TiseniGiri.ProgettoTiseniGiri.Filter." + parameter + "Filter");
+		Object typeFilter = typeClass.getDeclaredConstructor().newInstance();
+		Method method = typeClass.getMethod(filter, List.class, Object.class);				
+		filteredTweets= (List<Tweet>) method.invoke(typeFilter, tweets, par);
 		return filteredTweets;
 	}
 	
