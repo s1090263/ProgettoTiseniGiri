@@ -2,6 +2,7 @@ package com.TiseniGiri.ProgettoTiseniGiri.Stats;
 
 import java.util.List;
 
+import com.TiseniGiri.ProgettoTiseniGiri.Exceptions.EmptyListException;
 import com.TiseniGiri.ProgettoTiseniGiri.Model.Tweet;
 import com.TiseniGiri.ProgettoTiseniGiri.Stats.Interfaces.Stat;
 import java.lang.Math;
@@ -9,6 +10,8 @@ public class FavoritesStats implements Stat {
 
 	@Override
 	public Double average(List<Tweet> list) {
+		if(list.isEmpty())
+			throw new EmptyListException("List is empty, there are no tweets on which make stats");
 		Double sum = 0.0;
 		for(Tweet t: list) {
 			sum += t.getFavorite_count();
@@ -18,6 +21,8 @@ public class FavoritesStats implements Stat {
 
 	@Override
 	public Double frequency(List<Tweet> list, Object num) {
+		if(list.isEmpty())
+			throw new EmptyListException("List is empty, there are no tweets on which make stats");
 		int count = 0;
 		for(Tweet t: list) {
 			if (t.getFavorite_count() == (int)num)
@@ -28,6 +33,8 @@ public class FavoritesStats implements Stat {
 
 	@Override
 	public Double standardDeviation(List<Tweet> list) {
+		if(list.isEmpty())
+			throw new EmptyListException("List is empty, there are no tweets on which make stats");
 		Double avg = average(list);
 		Double sum = 0.0;
 		for(Tweet t: list) {
