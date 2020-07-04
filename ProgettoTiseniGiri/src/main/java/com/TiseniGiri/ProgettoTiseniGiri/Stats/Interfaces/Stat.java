@@ -6,7 +6,7 @@ import com.TiseniGiri.ProgettoTiseniGiri.Model.Tweet;
 
 public interface Stat {
 	public Double average(List<Tweet> list);
-	public Integer frequency(List<Tweet> list, int num);
+	public Double frequency(List<Tweet> list, Object num);
 	public Double standardDeviation(List<Tweet> list);
 	
 }

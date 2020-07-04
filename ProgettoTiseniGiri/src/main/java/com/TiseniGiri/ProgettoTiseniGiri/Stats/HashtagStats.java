@@ -17,13 +17,13 @@ public class HashtagStats implements Stat {
 	}
 
 	@Override
-	public Integer frequency(List<Tweet> list, int num) {
+	public Double frequency(List<Tweet> list, Object num) {
 		int count = 0;
 		for(Tweet t: list) {
-			if (t.getEntities().getHashtags().length == num);
+			if (t.getEntities().getHashtags().length == (int)num)
 			count++;
 		}
-		return count;
+		return (double)count;
 	}
 
 	@Override

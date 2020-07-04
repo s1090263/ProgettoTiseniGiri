@@ -17,13 +17,13 @@ public class FavoritesStats implements Stat {
 	}
 
 	@Override
-	public Integer frequency(List<Tweet> list, int num) {
+	public Double frequency(List<Tweet> list, Object num) {
 		int count = 0;
 		for(Tweet t: list) {
-			if (t.getFavorite_count() == num);
+			if (t.getFavorite_count() == (int)num)
 			count++;
 		}
-		return count;
+		return (double)count;
 	}
 
 	@Override
