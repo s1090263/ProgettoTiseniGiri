@@ -8,8 +8,6 @@ import com.TiseniGiri.ProgettoTiseniGiri.Filter.Interfaces.NumericalFilter;
 import com.TiseniGiri.ProgettoTiseniGiri.Model.Tweet;
 
 public class FavoritesFilter implements NumericalFilter {
-	
-	String id= "favorites";
 
 	@Override
 	public List<Tweet> greater(List<Tweet> list, Object num) {
