@@ -5,5 +5,8 @@ import java.util.List;
 import com.TiseniGiri.ProgettoTiseniGiri.Model.Tweet;
 
 public interface Stat {
-	public Integer stat_general(List<Tweet> list);
+	public Double average(List<Tweet> list);
+	public Integer frequency(List<Tweet> list, int num);
+	public Double standardDeviation(List<Tweet> list);
+	
 }
