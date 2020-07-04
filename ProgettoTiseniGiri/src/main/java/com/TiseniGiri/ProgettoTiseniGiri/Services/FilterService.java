@@ -27,19 +27,13 @@ public class FilterService extends GeneralService {
 		request = mapper.readValue(filters,Map.class);
 		
 		for (Map.Entry<String, List<Object>> entry : request.entrySet()) {
-		    String parameter = entry.getKey();
-		    String filter = entry.getValue().get(0).toString();
-		    
-		    ArrayList<Object> num = new ArrayList<Object>();
-			for (int i=0; i < entry.getValue().size()-1; i++)
-				num.add(i,entry.getValue().get(i+1));
-			if(num.size() == 1)
-			    tweets = executer.ExecuteFilter(tweets, parameter, filter, num.get(0));
+		    String parameter = entry.getValue().get(0).toString();
+		    String filter = entry.getValue().get(1).toString();
+		   		    
+			if(entry.getValue().size() == 3)
+			    tweets = executer.ExecuteFilter(tweets, parameter, filter, entry.getValue().get(2));
 			else 
-			    tweets = executer.ExecuteFilter(tweets, parameter, filter, num.get(0),num.get(1));
-
-		    	
-			
+			    tweets = executer.ExecuteFilter(tweets, parameter, filter, entry.getValue().get(2),entry.getValue().get(3));	
 		}
 		
 		return tweets;		
