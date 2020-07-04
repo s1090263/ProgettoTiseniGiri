@@ -38,7 +38,7 @@ public class Controller {
 		return new ResponseEntity<>(StatsService.getStats(UrlSetter.getUrl(topic,num),stats),HttpStatus.OK);
 	}
 	
-	//stats su tweets filtrati
+	//statistiche su tweets filtrati
 	@PostMapping("/tweets/filter/stats")
 	public ResponseEntity<Object> getFilteredStats(@RequestParam(name="topic", defaultValue="@UnivPoliMarche") String topic, @RequestParam(name="num", defaultValue="100") int num, @RequestBody String filters) throws JsonMappingException, JsonProcessingException, ClassNotFoundException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException, SecurityException{
 		return new ResponseEntity<>(StatsService.getFilteredStats(UrlSetter.getUrl(topic,num),filters),HttpStatus.OK);
