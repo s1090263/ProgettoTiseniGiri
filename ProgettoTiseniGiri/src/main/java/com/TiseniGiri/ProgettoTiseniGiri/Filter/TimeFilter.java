@@ -15,73 +15,73 @@ import com.TiseniGiri.ProgettoTiseniGiri.Model.Tweet;
 public class TimeFilter extends NumericalFilter {
 
 	@Override
-	public List<Tweet> greater(List<Tweet> list, Object num){
-		Date date = new Date();
-		Date date1 = new Date();;
+	public List<Tweet> greater(List<Tweet> list, Object stringDate){
+		Date User_date = new Date();
+		Date Tweet_date = new Date();
 		SimpleDateFormat Userformatter = new SimpleDateFormat("MMM dd HH:mm:ss yyyy", Locale.ENGLISH);
 		SimpleDateFormat Twitterformatter = new SimpleDateFormat("EEE MMM dd HH:mm:ss ZZZZZ yyyy", Locale.ENGLISH);
 		try {
-			date = Userformatter.parse((String) num);
+			User_date = Userformatter.parse((String) stringDate);
 		} catch (ParseException e) {
 			throw new IncorrectDateFormatException("Date's format is incorrect");
 		}
 		List<Tweet> list1 = new ArrayList<Tweet>();
 		for(Tweet t: list) {
 			try {
-				date1 = Twitterformatter.parse(t.getCreated_at());
+				Tweet_date = Twitterformatter.parse(t.getCreated_at());
 			} catch (ParseException e) {
 				throw new ExtremesException("ciao");
 			}
-			if(date.before(date1))
+			if(User_date.before(Tweet_date))
 				list1.add(t);
 		}
 		return list1;
 	}
 
 	@Override
-	public List<Tweet> lower(List<Tweet> list, Object num){
-		Date date = new Date();
-		Date date1 = new Date();;
+	public List<Tweet> lower(List<Tweet> list, Object stringDate){
+		Date User_date = new Date();
+		Date Tweet_date = new Date();
 		SimpleDateFormat Userformatter = new SimpleDateFormat("MMM dd HH:mm:ss yyyy", Locale.ENGLISH);
 		SimpleDateFormat Twitterformatter = new SimpleDateFormat("EEE MMM dd HH:mm:ss ZZZZZ yyyy", Locale.ENGLISH);
 		try {
-			date = Userformatter.parse((String) num);
+			User_date = Userformatter.parse((String) stringDate);
 		} catch (ParseException e) {
 			throw new IncorrectDateFormatException("Date's format is incorrect");
 		}
 		List<Tweet> list1 = new ArrayList<Tweet>();
 		for(Tweet t: list) {
 			try {
-				date1 = Twitterformatter.parse(t.getCreated_at());
+				Tweet_date = Twitterformatter.parse(t.getCreated_at());
 			} catch (ParseException e) {
-				e.printStackTrace();
+				throw new ExtremesException("ciao");
 			}
-			if(date.after(date1))
+			if(User_date.after(Tweet_date))
 				list1.add(t);
 		}
 		return list1;
 	}
 
 	@Override
-	public List<Tweet> equal(List<Tweet> list, Object num){
-		Date date = new Date();
-		Date date1 = new Date();;
+	public List<Tweet> equal(List<Tweet> list, Object stringDate){
+		Date User_date = new Date();
+		Date Tweet_date = new Date();
 		SimpleDateFormat Userformatter = new SimpleDateFormat("MMM dd HH:mm:ss yyyy", Locale.ENGLISH);
 		SimpleDateFormat Twitterformatter = new SimpleDateFormat("EEE MMM dd HH:mm:ss ZZZZZ yyyy", Locale.ENGLISH);
 		try {
-			date = Userformatter.parse((String) num);
-		} catch (ParseException e1) {
+			User_date = Userformatter.parse((String) stringDate);
+		} catch (ParseException e) {
 			throw new IncorrectDateFormatException("Date's format is incorrect");
 		}
 		List<Tweet> list1 = new ArrayList<Tweet>();
 		for(Tweet t: list) {
 			try {
-				date1 = Twitterformatter.parse(t.getCreated_at());
+				Tweet_date = Twitterformatter.parse(t.getCreated_at());
 			} catch (ParseException e) {
-				throw new IncorrectDateFormatException("Date's format is incorrect");
+				throw new ExtremesException("ciao");
 			}
-			if(date.equals(date1))
-			list1.add(t);
+			if(User_date.equals(Tweet_date))
+				list1.add(t);
 		}
 		return list1;
 	}

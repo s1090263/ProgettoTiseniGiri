@@ -8,9 +8,9 @@ import com.TiseniGiri.ProgettoTiseniGiri.Model.Tweet;
 
 public abstract class NumericalFilter{
 	
-	public abstract List<Tweet> greater(List<Tweet> list, Object num);
-	public abstract List<Tweet> lower(List<Tweet> list,	Object num);
-	public abstract List<Tweet> equal(List<Tweet> list,	Object num);
+	public abstract List<Tweet> greater(List<Tweet> list, Object par);
+	public abstract List<Tweet> lower(List<Tweet> list,	Object par);
+	public abstract List<Tweet> equal(List<Tweet> list,	Object par);
 	public List<Tweet> between(List<Tweet> list, Object top, Object bottom){
 		if ((int)top <= (int)bottom)
 			throw new ExtremesException("The top value must be higher that the bottom value");

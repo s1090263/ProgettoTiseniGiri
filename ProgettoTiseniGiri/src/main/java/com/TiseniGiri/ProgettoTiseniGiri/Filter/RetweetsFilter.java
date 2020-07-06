@@ -8,7 +8,6 @@ import com.TiseniGiri.ProgettoTiseniGiri.Filter.InterfacesAndAbstractClasses.Num
 import com.TiseniGiri.ProgettoTiseniGiri.Model.Tweet;
 
 public class RetweetsFilter extends NumericalFilter {
-	String id = "ciao";
 	@Override
 	public List<Tweet> greater(List<Tweet> list, Object num) {
 		if ((int)num < 0)
