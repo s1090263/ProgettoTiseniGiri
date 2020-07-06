@@ -1,13 +1,13 @@
 package com.TiseniGiri.ProgettoTiseniGiri.Exceptions;
 
-public class IncorrectFormatDateException extends RuntimeException {
+public class IncorrectDateFormatException extends RuntimeException {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 5L;
 	
-	public IncorrectFormatDateException(String message) {
+	public IncorrectDateFormatException(String message) {
 		super(message);
 	}
 }
