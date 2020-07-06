@@ -7,12 +7,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.yaml.snakeyaml.constructor.DuplicateKeyException;
+
 import com.TiseniGiri.ProgettoTiseniGiri.Model.Tweet;
+import com.TiseniGiri.ProgettoTiseniGiri.Utility.SingleKeyHashMap;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-
 
 public class FilterService extends GeneralService {
 	
@@ -21,10 +23,10 @@ public class FilterService extends GeneralService {
 	public static List<Tweet> getFilteredTweets(String url,String filters) throws JsonMappingException, JsonProcessingException, ClassNotFoundException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException, SecurityException{
 		List<Tweet> tweets = getTweets(url);
 		
-		Map<String,List<Object>> request = null;
+		SingleKeyHashMap<String,List<Object>> request = null;
 		ObjectMapper mapper = new ObjectMapper();
-		
-		request = mapper.readValue(filters,Map.class);
+		request = mapper.readValue(filters,SingleKeyHashMap.class);
+
 		
 		for (Map.Entry<String, List<Object>> entry : request.entrySet()) {
 		    String parameter = entry.getValue().get(0).toString();

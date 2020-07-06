@@ -5,9 +5,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
-import com.TiseniGiri.ProgettoTiseniGiri.Exceptions.ExtremesException;
-import com.TiseniGiri.ProgettoTiseniGiri.Exceptions.NegativeNumberException;
-import com.TiseniGiri.ProgettoTiseniGiri.Exceptions.OutOfReachException;
+import com.TiseniGiri.ProgettoTiseniGiri.Exceptions.*;
 
 @ControllerAdvice
 public class SpringExceptionResolver {
@@ -44,7 +42,19 @@ public class SpringExceptionResolver {
 	
 	@ExceptionHandler(ClassCastException.class)
 	public ResponseEntity<Error> ClassCastExceptionHandler(ClassCastException e){
-		Error error = new Error("You must enter an integer",e);
+		Error error = new Error("You must enter the correct type for the parameters",e);
+		return new ResponseEntity<Error>(error, HttpStatus.BAD_REQUEST);	
+    }
+	
+	@ExceptionHandler(IncorrectDateFormatException.class)
+	public ResponseEntity<Error> IncorrectDateFormatExceptionHandler(IncorrectDateFormatException e){
+		Error error = new Error("Date's format is incorrect, please use the following format: 'MMM dd HH:mm:ss yyyy' Ex: 'Jan 01 00:00:00 1970' ",e);
+		return new ResponseEntity<Error>(error, HttpStatus.BAD_REQUEST);	
+    }
+	
+	@ExceptionHandler(DuplicatedKeyException.class)
+	public ResponseEntity<Error> DuplicatedKeyExceptionHandler(DuplicatedKeyException e){
+		Error error = new Error("Found duplicated keys, please make sure you put different id for each request",e);
 		return new ResponseEntity<Error>(error, HttpStatus.BAD_REQUEST);	
     }	
 }
