@@ -9,7 +9,7 @@ import java.util.Locale;
 
 import com.TiseniGiri.ProgettoTiseniGiri.Exceptions.ExtremesException;
 import com.TiseniGiri.ProgettoTiseniGiri.Exceptions.IncorrectDateFormatException;
-import com.TiseniGiri.ProgettoTiseniGiri.Filter.Interfaces.NumericalFilter;
+import com.TiseniGiri.ProgettoTiseniGiri.Filter.InterfacesAndAbstractClasses.NumericalFilter;
 import com.TiseniGiri.ProgettoTiseniGiri.Model.Tweet;
 
 public class TimeFilter extends NumericalFilter {

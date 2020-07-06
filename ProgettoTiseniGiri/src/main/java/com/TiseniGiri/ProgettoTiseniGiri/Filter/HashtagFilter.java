@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.TiseniGiri.ProgettoTiseniGiri.Exceptions.NegativeNumberException;
-import com.TiseniGiri.ProgettoTiseniGiri.Filter.Interfaces.*;
+import com.TiseniGiri.ProgettoTiseniGiri.Filter.InterfacesAndAbstractClasses.*;
 import com.TiseniGiri.ProgettoTiseniGiri.Model.Tweet;
 
 public class HashtagFilter extends NumericalFilter implements StringFilter {

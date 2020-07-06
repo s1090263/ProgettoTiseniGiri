@@ -3,7 +3,7 @@ package com.TiseniGiri.ProgettoTiseniGiri.Filter;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.TiseniGiri.ProgettoTiseniGiri.Filter.Interfaces.StringFilter;
+import com.TiseniGiri.ProgettoTiseniGiri.Filter.InterfacesAndAbstractClasses.StringFilter;
 import com.TiseniGiri.ProgettoTiseniGiri.Model.Tweet;
 
 public class UserFilter implements StringFilter {

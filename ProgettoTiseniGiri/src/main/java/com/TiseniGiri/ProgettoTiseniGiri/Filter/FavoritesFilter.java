@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.TiseniGiri.ProgettoTiseniGiri.Exceptions.NegativeNumberException;
-import com.TiseniGiri.ProgettoTiseniGiri.Filter.Interfaces.NumericalFilter;
+import com.TiseniGiri.ProgettoTiseniGiri.Filter.InterfacesAndAbstractClasses.NumericalFilter;
 import com.TiseniGiri.ProgettoTiseniGiri.Model.Tweet;
 
 public class FavoritesFilter extends NumericalFilter {

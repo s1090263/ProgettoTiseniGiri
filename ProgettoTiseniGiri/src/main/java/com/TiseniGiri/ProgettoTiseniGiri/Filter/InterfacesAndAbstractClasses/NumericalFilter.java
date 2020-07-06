@@ -1,4 +1,4 @@
-package com.TiseniGiri.ProgettoTiseniGiri.Filter.Interfaces;
+package com.TiseniGiri.ProgettoTiseniGiri.Filter.InterfacesAndAbstractClasses;
 
 import java.util.ArrayList;
 import java.util.List;
