@@ -57,4 +57,10 @@ public class SpringExceptionResolver {
 		Error error = new Error("Found duplicated keys, please make sure you put different id for each request",e);
 		return new ResponseEntity<Error>(error, HttpStatus.BAD_REQUEST);	
     }	
+	
+	@ExceptionHandler(EmptyListException.class)
+	public ResponseEntity<Error> EmptyListExceptionHandler(EmptyListException e){
+		Error error = new Error("List is empty, there are no tweets on which make stats",e);
+		return new ResponseEntity<Error>(error, HttpStatus.BAD_REQUEST);	
+    }
 }
