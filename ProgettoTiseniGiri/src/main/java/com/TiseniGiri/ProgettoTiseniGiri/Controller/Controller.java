@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.TiseniGiri.ProgettoTiseniGiri.Services.FilterService;
 import com.TiseniGiri.ProgettoTiseniGiri.Services.GeneralService;
@@ -28,7 +29,7 @@ public class Controller {
 	
 	//tweets filtrati
 	@PostMapping("/tweets/filter")
-	public ResponseEntity<Object> getFilteredTweets(@RequestParam(name="topic", defaultValue="@UnivPoliMarche") String topic, @RequestParam(name="num", defaultValue="100") int num, @RequestBody String filters) throws JsonMappingException, JsonProcessingException, ClassNotFoundException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException, SecurityException{
+	public ResponseEntity<Object> getFilteredTweets(@RequestParam(name="topic", defaultValue="@UnivPoliMarche") String topic, @RequestParam(name="num", defaultValue="100") int num, @RequestBody String filters) throws JsonMappingException, JsonProcessingException,InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException, SecurityException, ClassNotFoundException{
 		return new ResponseEntity<>(FilterService.getFilteredTweets(UrlSetter.getUrl(topic,num),filters),HttpStatus.OK);
 	}
 	
@@ -42,6 +43,5 @@ public class Controller {
 	@PostMapping("/tweets/filter/stats")
 	public ResponseEntity<Object> getFilteredStats(@RequestParam(name="topic", defaultValue="@UnivPoliMarche") String topic, @RequestParam(name="num", defaultValue="100") int num, @RequestBody String filters) throws JsonMappingException, JsonProcessingException, ClassNotFoundException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException, SecurityException{
 		return new ResponseEntity<>(StatsService.getFilteredStats(UrlSetter.getUrl(topic,num),filters),HttpStatus.OK);
-	}	
-		
+	}		
 }
