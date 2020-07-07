@@ -8,6 +8,7 @@ import com.TiseniGiri.ProgettoTiseniGiri.Model.Tweet;
 
 public class ExecuterForServices {
 	
+	@SuppressWarnings("unchecked")
 	public List<Tweet> ExecuteFilter(List<Tweet> tweets, String parameter, String filter, Object par) throws ClassNotFoundException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException, SecurityException {
 		List<Tweet> filteredTweets = new ArrayList<Tweet>();
 		Class<?> typeClass = Class.forName("com.TiseniGiri.ProgettoTiseniGiri.Filter." + parameter + "Filter");
@@ -17,6 +18,7 @@ public class ExecuterForServices {
 		return filteredTweets;
 	}
 	
+	@SuppressWarnings("unchecked")
 	public List<Tweet> ExecuteFilter(List<Tweet> tweets, String parameter, String filter, Object par1, Object par2) throws ClassNotFoundException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException, SecurityException {
 		Class<?> typeClass = Class.forName("com.TiseniGiri.ProgettoTiseniGiri.Filter." + parameter + "Filter");
 		Object typeFilter = typeClass.getDeclaredConstructor().newInstance();

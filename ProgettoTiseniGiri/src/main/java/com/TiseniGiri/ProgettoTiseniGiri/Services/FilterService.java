@@ -1,21 +1,13 @@
 package com.TiseniGiri.ProgettoTiseniGiri.Services;
 
 import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import org.yaml.snakeyaml.constructor.DuplicateKeyException;
-
-import com.TiseniGiri.ProgettoTiseniGiri.Exceptions.DuplicatedKeyException;
 import com.TiseniGiri.ProgettoTiseniGiri.Model.Tweet;
 import com.TiseniGiri.ProgettoTiseniGiri.Utility.SingleKeyHashMap;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.node.ObjectNode;
 
 public class FilterService extends GeneralService {
 	
