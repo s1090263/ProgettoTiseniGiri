@@ -9,6 +9,7 @@ import java.util.Map;
 
 import org.yaml.snakeyaml.constructor.DuplicateKeyException;
 
+import com.TiseniGiri.ProgettoTiseniGiri.Exceptions.DuplicatedKeyException;
 import com.TiseniGiri.ProgettoTiseniGiri.Model.Tweet;
 import com.TiseniGiri.ProgettoTiseniGiri.Utility.SingleKeyHashMap;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -20,6 +21,7 @@ public class FilterService extends GeneralService {
 	
 	static ExecuterForServices executer = new ExecuterForServices();
 	
+	@SuppressWarnings("unchecked")
 	public static List<Tweet> getFilteredTweets(String url,String filters) throws JsonMappingException, JsonProcessingException, ClassNotFoundException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException, SecurityException{
 		List<Tweet> tweets = getTweets(url);
 		

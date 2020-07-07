@@ -38,7 +38,7 @@ public class FavoritesStats implements Stat {
 		Double avg = average(list);
 		Double sum = 0.0;
 		for(Tweet t: list) {
-			sum = Math.pow((t.getFavorite_count()-avg), 2.0);
+			sum += Math.pow((t.getFavorite_count()-avg), 2.0);
 		}
 		return Math.sqrt(sum/list.size());
 	}
