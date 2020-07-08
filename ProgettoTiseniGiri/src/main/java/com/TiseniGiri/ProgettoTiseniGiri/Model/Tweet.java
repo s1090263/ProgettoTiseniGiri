@@ -63,14 +63,15 @@ public class Tweet {
 	/**
 	 * Tweet constructor with parameters
 	 * 
-	 * @param id
-	 * @param created_at
-	 * @param metadata
-	 * @param user
-	 * @param retweet_count
-	 * @param favorite_count
-	 * @param lang
-	 * @param entities
+	 * @param id             The tweet's id
+	 * @param created_at     When the tweet was created
+	 * @param metadata       The Tweet's metadata, it contains "iso_language_code"
+	 *                       and "result_type"
+	 * @param user           The user who created the tweet
+	 * @param retweet_count  Number of times the tweet has been retweteed
+	 * @param favorite_count Number of times the tweet has been liked
+	 * @param lang           The tweets detected language
+	 * @param entities       Object that contains the tweet's entities
 	 */
 	public Tweet(long id, String created_at, Map<String, String> metadata, User user, int retweet_count,
 			int favorite_count, String lang, Entities entities) {
@@ -97,7 +98,7 @@ public class Tweet {
 	/**
 	 * Set the id
 	 * 
-	 * @param id
+	 * @param id The tweet's id
 	 */
 	public void setId(long id) {
 		this.id = id;
@@ -115,7 +116,7 @@ public class Tweet {
 	/**
 	 * Set the date and time
 	 * 
-	 * @param created_at
+	 * @param created_at When the tweet was created
 	 */
 	public void setCreated_at(String created_at) {
 		this.created_at = created_at;
@@ -133,7 +134,7 @@ public class Tweet {
 	/**
 	 * Set the metadata
 	 * 
-	 * @param metadata
+	 * @param metadata The Tweet's metadata, it contains "iso_language_code"
 	 */
 	public void setMetadata(Map<String, String> metadata) {
 		this.metadata = metadata;
@@ -151,7 +152,7 @@ public class Tweet {
 	/**
 	 * Set the user who created the tweet
 	 * 
-	 * @param user
+	 * @param user The user who created the tweet
 	 */
 	public void setUser(User user) {
 		this.user = user;
@@ -169,7 +170,7 @@ public class Tweet {
 	/**
 	 * Set the number of retweets
 	 * 
-	 * @param retweet_count
+	 * @param retweet_count Number of times the tweet has been retweteed
 	 */
 	public void setRetweet_count(int retweet_count) {
 		this.retweet_count = retweet_count;
@@ -187,7 +188,7 @@ public class Tweet {
 	/**
 	 * Set the number of likes
 	 * 
-	 * @param favorite_count
+	 * @param favorite_count Number of times the tweet has been liked
 	 */
 	public void setFavorite_count(int favorite_count) {
 		this.favorite_count = favorite_count;
@@ -205,7 +206,7 @@ public class Tweet {
 	/**
 	 * Set the tweet's Language
 	 * 
-	 * @param lang
+	 * @param lang The tweets language
 	 */
 	public void setLang(String lang) {
 		this.lang = lang;
@@ -223,7 +224,7 @@ public class Tweet {
 	/**
 	 * Set the entities
 	 * 
-	 * @param entities
+	 * @param entities Object that contains the tweet's entities
 	 */
 	public void setEntities(Entities entities) {
 		this.entities = entities;

@@ -33,8 +33,8 @@ public class Error {
 	/**
 	 * Error constructor
 	 * 
-	 * @param message
-	 * @param e
+	 * @param message The message to be printed
+	 * @param e       The exception that generated the error
 	 */
 	public Error(String message, Exception e) {
 		this.message = message;
@@ -53,7 +53,7 @@ public class Error {
 	/**
 	 * Set the message
 	 * 
-	 * @param message
+	 * @param message The message to be printed
 	 */
 	public void setMessage(String message) {
 		this.message = message;
@@ -75,7 +75,7 @@ public class Error {
 	/**
 	 * Set the trace of the exception
 	 * 
-	 * @param trace
+	 * @param trace The trace of the exception that generated the error
 	 */
 	public void setTrace(String trace) {
 		this.trace = trace;
@@ -96,7 +96,7 @@ public class Error {
 	/**
 	 * Set the timestamp
 	 * 
-	 * @param timeStamp
+	 * @param timeStamp The timestamp of the error
 	 */
 	public void setTimeStamp(Timestamp timeStamp) {
 		this.timeStamp = timeStamp;

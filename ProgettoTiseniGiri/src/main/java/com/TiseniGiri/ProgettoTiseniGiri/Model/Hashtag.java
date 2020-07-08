@@ -30,8 +30,10 @@ public class Hashtag {
 	/**
 	 * Hashtag constructor with parameters
 	 * 
-	 * @param text
-	 * @param indices
+	 * @param text    The hashtag's text
+	 * @param indices The hashtag's indices, witch represents an array of integers
+	 *                indicating the offsets within the tweet text where the hashtag
+	 *                begins and ends.
 	 */
 	public Hashtag(String text, int[] indices) {
 		super();
@@ -51,7 +53,7 @@ public class Hashtag {
 	/**
 	 * Set the hashtag's text
 	 * 
-	 * @param text
+	 * @param text The hashtag's text
 	 */
 	public void setText(String text) {
 		this.text = text;
@@ -69,7 +71,9 @@ public class Hashtag {
 	/**
 	 * Set the indices
 	 * 
-	 * @param indices
+	 * @param indices The hashtag's indices, witch represents an array of integers
+	 *                indicating the offsets within the tweet text where the hashtag
+	 *                begins and ends.
 	 */
 	public void setIndices(int[] indices) {
 		this.indices = indices;
