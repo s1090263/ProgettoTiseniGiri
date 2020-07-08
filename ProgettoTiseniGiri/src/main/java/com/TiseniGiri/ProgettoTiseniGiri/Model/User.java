@@ -52,13 +52,13 @@ public class User {
 	/**
 	 * User constructor with parameters
 	 * 
-	 * @param id
-	 * @param name
-	 * @param followers_count
-	 * @param friends_count
-	 * @param favourites_count
-	 * @param statuses_count
-	 * @param verified
+	 * @param id               The user's id
+	 * @param name             The user's name
+	 * @param followers_count  The number of followers of the user
+	 * @param friends_count    The number of friends of the user
+	 * @param favourites_count The number of tweets the user liked
+	 * @param statuses_count   The number of tweets created by the user
+	 * @param verified         If true, the user has a verified account
 	 */
 	public User(String id, String name, int followers_count, int friends_count, int favourites_count,
 			int statuses_count, boolean verified) {
@@ -84,7 +84,7 @@ public class User {
 	/**
 	 * Set the id
 	 * 
-	 * @param id
+	 * @param id The user's id
 	 */
 	public void setId(String id) {
 		this.id = id;
@@ -93,7 +93,7 @@ public class User {
 	/**
 	 * Get the user's name
 	 * 
-	 * @return name
+	 * @return name 
 	 */
 	public String getName() {
 		return name;
@@ -102,7 +102,7 @@ public class User {
 	/**
 	 * Set the user's name
 	 * 
-	 * @param name
+	 * @param name The user's name
 	 */
 	public void setName(String name) {
 		this.name = name;
@@ -120,7 +120,7 @@ public class User {
 	/**
 	 * Set the number of followers
 	 * 
-	 * @param followers_count
+	 * @param followers_count The number of followers of the user
 	 */
 	public void setFollowers_count(int followers_count) {
 		this.followers_count = followers_count;
@@ -138,7 +138,7 @@ public class User {
 	/**
 	 * Set the number of friends
 	 * 
-	 * @param friends_count
+	 * @param friends_count The number of friends of the user
 	 */
 	public void setFriends_count(int friends_count) {
 		this.friends_count = friends_count;
@@ -156,7 +156,7 @@ public class User {
 	/**
 	 * Set the number of tweets liked by the user
 	 * 
-	 * @param favourites_count
+	 * @param favourites_count The number of tweets the user liked
 	 */
 	public void setFavourites_count(int favourites_count) {
 		this.favourites_count = favourites_count;
@@ -165,7 +165,7 @@ public class User {
 	/**
 	 * Get the number of tweets created by the user
 	 * 
-	 * @return statuses_count
+	 * @return statuses_count  
 	 */
 	public int getStatuses_count() {
 		return statuses_count;
@@ -174,7 +174,7 @@ public class User {
 	/**
 	 * Set the number of tweets created by the user
 	 * 
-	 * @param statuses_count
+	 * @param statuses_count The number of tweets created by the user
 	 */
 	public void setStatuses_count(int statuses_count) {
 		this.statuses_count = statuses_count;
@@ -183,7 +183,7 @@ public class User {
 	/**
 	 * Get the verified status
 	 * 
-	 * @return
+	 * @return boolean
 	 */
 	public boolean isVerified() {
 		return verified;
@@ -192,7 +192,7 @@ public class User {
 	/**
 	 * Set the verified status
 	 * 
-	 * @param verified
+	 * @param verified  If true, the user has a verified account
 	 */
 	public void setVerified(boolean verified) {
 		this.verified = verified;

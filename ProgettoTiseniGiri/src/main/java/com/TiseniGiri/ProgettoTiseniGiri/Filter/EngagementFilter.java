@@ -45,7 +45,7 @@ public class EngagementFilter {
 	 * 
 	 * @param list to be filtered
 	 * @param num  parameter which is used for filtering operation
-	 * @return
+	 * @return list of tweets
 	 */
 	public List<Tweet> sortForRetweets(List<Tweet> list, Object num) {
 		list.sort(cmp);

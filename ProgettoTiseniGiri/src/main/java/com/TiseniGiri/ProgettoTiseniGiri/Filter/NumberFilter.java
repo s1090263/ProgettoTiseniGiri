@@ -20,8 +20,8 @@ public class NumberFilter {
 	 * 
 	 * @throws NegativeNumberException
 	 * @throws OutOfReachException
-	 * @param list
-	 * @param num
+	 * @param list list of tweets 
+	 * @param num number of tweets user wants to get
 	 * @return a list of tweets
 	 */
 	public List<Tweet> getNumberOfTweets(List<Tweet> list, Object num) {

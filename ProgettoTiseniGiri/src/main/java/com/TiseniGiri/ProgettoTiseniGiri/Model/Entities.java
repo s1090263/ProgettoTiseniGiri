@@ -26,7 +26,7 @@ public class Entities {
 	/**
 	 * Entities constructor with parameters
 	 * 
-	 * @param hashtags
+	 * @param hashtags Array of hashtags
 	 */
 	public Entities(Hashtag[] hashtags) {
 		super();
