@@ -11,6 +11,7 @@ import java.util.Arrays;
 public class Entities {
 
 	/**
+	 * 
 	 * Array of hashtags
 	 * 
 	 * @see com.TiseniGiri.ProgettoTiseniGiri.Model.Hashtag
