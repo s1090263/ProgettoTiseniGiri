@@ -12,6 +12,8 @@ public class Entities {
 
 	/**
 	 * Array of hashtags
+	 * 
+	 * @see com.TiseniGiri.ProgettoTiseniGiri.Model.Hashtag
 	 */
 	private Hashtag[] hashtags;
 

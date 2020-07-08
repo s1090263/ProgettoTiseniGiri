@@ -27,6 +27,8 @@ public class Tweet {
 
 	/**
 	 * The user who created the tweet
+	 * 
+	 * @see com.TiseniGiri.ProgettoTiseniGiri.Model.User
 	 */
 	private User user;
 
@@ -47,6 +49,8 @@ public class Tweet {
 
 	/**
 	 * Object that contains the tweet's entities
+	 * 
+	 * @see com.TiseniGiri.ProgettoTiseniGiri.Model.Entities
 	 */
 	private Entities entities;
 
