@@ -26,7 +26,6 @@ public class Tweet {
 	private Map<String, String> metadata;
 
 	/**
-	 * 
 	 * The user who created the tweet
 	 * 
 	 * @see com.TiseniGiri.ProgettoTiseniGiri.Model.User
