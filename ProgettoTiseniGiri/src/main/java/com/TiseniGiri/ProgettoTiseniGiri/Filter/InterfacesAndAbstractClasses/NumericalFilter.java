@@ -19,8 +19,8 @@ public abstract class NumericalFilter {
 	/**
 	 * This method selects every tweet with a parameter greater than "par"
 	 * 
-	 * @param list
-	 * @param par
+	 * @param list list to be filtered 
+	 * @param par parameter which is used for filtering operation
 	 * @return a list of tweets
 	 */
 	public abstract List<Tweet> greater(List<Tweet> list, Object par);
@@ -28,8 +28,8 @@ public abstract class NumericalFilter {
 	/**
 	 * This method selects every tweet with a parameter lower than "par"
 	 * 
-	 * @param list
-	 * @param par
+	 * @param list list to be filtered
+	 * @param par parameter who is used for filtering operation
 	 * @return a list of tweets
 	 */
 	public abstract List<Tweet> lower(List<Tweet> list, Object par);
@@ -37,8 +37,8 @@ public abstract class NumericalFilter {
 	/**
 	 * This method selects every tweet with a parameter equal to "par"
 	 * 
-	 * @param list
-	 * @param par
+	 * @param list list to be filtered
+	 * @param par parameter who is used for filtering operation
 	 * @return a list of tweets
 	 */
 	public abstract List<Tweet> equal(List<Tweet> list, Object par);
@@ -47,8 +47,9 @@ public abstract class NumericalFilter {
 	 * This method selects every tweet with a parameter which is between "top" and
 	 * "bottom"
 	 * 
-	 * @param list
-	 * @param par
+	 * @param list list to be filtered
+	 * @param top parameter who is used for filtering operation
+	 * @param bottom parameter who is used for filtering operation
 	 * @return a list of tweets
 	 */
 	public List<Tweet> between(List<Tweet> list, Object top, Object bottom) {

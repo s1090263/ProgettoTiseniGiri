@@ -17,8 +17,8 @@ public interface StringFilter {
 	 * Method stringSearch search all tweets with a string parameter which is the
 	 * same as "word"
 	 * 
-	 * @param list
-	 * @param word
+	 * @param list list to be filtered
+	 * @param word string parameter used to filter list
 	 * @return list of tweets
 	 */
 	public List<Tweet> stringSearch(List<Tweet> list, Object word);

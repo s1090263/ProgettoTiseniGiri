@@ -21,14 +21,35 @@ import com.TiseniGiri.ProgettoTiseniGiri.Model.Tweet;
 public class TimeFilter extends NumericalFilter {
 
 	/**
-	 * {@inheritDoc}
+	 * Date object representing the parsed date given in input by user
+	 */
+	private Date User_date;
+
+	/**
+	 * Date object representing the parsed date of the current tweet
+	 */
+	private Date Tweet_date;
+
+	/**
+	 * SimpleDate object used for parsing the String object representing the date
+	 * given in input by user
+	 */
+	private final SimpleDateFormat Userformatter = new SimpleDateFormat("MMM dd HH:mm:ss yyyy", Locale.ENGLISH);
+
+	/**
+	 * SimpleDate object used for parsing the String object representing the current
+	 * tweet's date
+	 */
+	private final SimpleDateFormat Twitterformatter = new SimpleDateFormat("EEE MMM dd HH:mm:ss ZZZZZ yyyy",
+			Locale.ENGLISH);
+
+	/**
+	 * @throws IncorrectDateFormatException {@inheritDoc}
 	 */
 	@Override
 	public List<Tweet> greater(List<Tweet> list, Object stringDate) {
-		Date User_date = new Date();
-		Date Tweet_date = new Date();
-		SimpleDateFormat Userformatter = new SimpleDateFormat("MMM dd HH:mm:ss yyyy", Locale.ENGLISH);
-		SimpleDateFormat Twitterformatter = new SimpleDateFormat("EEE MMM dd HH:mm:ss ZZZZZ yyyy", Locale.ENGLISH);
+		User_date = new Date();
+		Tweet_date = new Date();
 		try {
 			User_date = Userformatter.parse((String) stringDate);
 		} catch (ParseException e) {
@@ -48,14 +69,12 @@ public class TimeFilter extends NumericalFilter {
 	}
 
 	/**
-	 * {@inheritDoc}
+	 * @throws IncorrectDateFormatException {@inheritDoc}
 	 */
 	@Override
 	public List<Tweet> lower(List<Tweet> list, Object stringDate) {
-		Date User_date = new Date();
-		Date Tweet_date = new Date();
-		SimpleDateFormat Userformatter = new SimpleDateFormat("MMM dd HH:mm:ss yyyy", Locale.ENGLISH);
-		SimpleDateFormat Twitterformatter = new SimpleDateFormat("EEE MMM dd HH:mm:ss ZZZZZ yyyy", Locale.ENGLISH);
+		User_date = new Date();
+		Tweet_date = new Date();
 		try {
 			User_date = Userformatter.parse((String) stringDate);
 		} catch (ParseException e) {
@@ -75,14 +94,12 @@ public class TimeFilter extends NumericalFilter {
 	}
 
 	/**
-	 * {@inheritDoc}
+	 * @throws IncorrectDateFormatException {@inheritDoc}
 	 */
 	@Override
 	public List<Tweet> equal(List<Tweet> list, Object stringDate) {
-		Date User_date = new Date();
-		Date Tweet_date = new Date();
-		SimpleDateFormat Userformatter = new SimpleDateFormat("MMM dd HH:mm:ss yyyy", Locale.ENGLISH);
-		SimpleDateFormat Twitterformatter = new SimpleDateFormat("EEE MMM dd HH:mm:ss ZZZZZ yyyy", Locale.ENGLISH);
+		User_date = new Date();
+		Tweet_date = new Date();
 		try {
 			User_date = Userformatter.parse((String) stringDate);
 		} catch (ParseException e) {
