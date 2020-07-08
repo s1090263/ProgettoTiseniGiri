@@ -5,25 +5,65 @@ import java.io.StringWriter;
 import java.sql.Timestamp;
 import java.util.Date;
 
+/**
+ * The class representing a Spring error
+ * 
+ * @author Lorenzo Tiseni
+ * @author Matteo Giri
+ * @see com.TiseniGiri.ProgettoTiseniGiri.Exceptions.ExceptionHandler.SpringExceptionResolver
+ */
 public class Error {
+	/**
+	 * The timestamp of the error
+	 */
 	private Timestamp timeStamp;
-    private String message;
-    private String trace;
-    private Exception e;
-    
+	/**
+	 * The message to be printed
+	 */
+	private String message;
+	/**
+	 * The trace of the exception that generated the error
+	 */
+	private String trace;
+	/**
+	 * The exception that generated the error
+	 */
+	private Exception e;
+
+	/**
+	 * Error constructor
+	 * 
+	 * @param message
+	 * @param e
+	 */
 	public Error(String message, Exception e) {
-        this.message = message; 
-        this.e = e;
-    }
-	
+		this.message = message;
+		this.e = e;
+	}
+
+	/**
+	 * Get the message
+	 * 
+	 * @return message
+	 */
 	public String getMessage() {
 		return message;
 	}
 
+	/**
+	 * Set the message
+	 * 
+	 * @param message
+	 */
 	public void setMessage(String message) {
 		this.message = message;
 	}
 
+	/**
+	 * Get the trace of the exception
+	 * 
+	 * @return trace
+	 */
 	public String getTrace() {
 		StringWriter sw = new StringWriter();
 		PrintWriter pw = new PrintWriter(sw);
@@ -32,15 +72,34 @@ public class Error {
 		return trace;
 	}
 
+	/**
+	 * Set the trace of the exception
+	 * 
+	 * @param trace
+	 */
 	public void setTrace(String trace) {
-		this.trace = trace;	
+		this.trace = trace;
 	}
 
+	/**
+	 * Get the timestamp
+	 * 
+	 * @return timeStamp
+	 */
 	public Timestamp getTimeStamp() {
-		Date date= new Date();
+		Date date = new Date();
 		long time = date.getTime();
 		timeStamp = new Timestamp(time);
 		return timeStamp;
 	}
-	
+
+	/**
+	 * Set the timestamp
+	 * 
+	 * @param timeStamp
+	 */
+	public void setTimeStamp(Timestamp timeStamp) {
+		this.timeStamp = timeStamp;
+	}
+
 }
