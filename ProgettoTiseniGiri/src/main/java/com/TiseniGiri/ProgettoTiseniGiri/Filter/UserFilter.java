@@ -15,17 +15,16 @@ import com.TiseniGiri.ProgettoTiseniGiri.Model.Tweet;
  */
 
 public class UserFilter implements StringFilter {
-	
-	
+
 	/**
 	 * {@inheritDoc}
 	 */
 	@Override
 	public List<Tweet> stringSearch(List<Tweet> list, Object word) {
 		ArrayList<Tweet> list1 = new ArrayList<Tweet>();
-		for(Tweet t: list) {
-		if(t.getUser().getName().equals(word))
-		list1.add(t);
+		for (Tweet t : list) {
+			if (t.getUser().getName().equals(word))
+				list1.add(t);
 		}
 		return list1;
 	}
