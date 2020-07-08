@@ -8,7 +8,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 
-
+/**
+ * Main class
+ * 
+ * @author Lorenzo Tiseni
+ * @author Matteo Giri
+ */
 @SpringBootApplication
 public class ProgettoTiseniGiriApplication {
 
