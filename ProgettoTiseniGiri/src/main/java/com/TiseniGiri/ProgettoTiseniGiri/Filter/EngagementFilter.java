@@ -17,24 +17,25 @@ import com.TiseniGiri.ProgettoTiseniGiri.Utility.ComparatorForRetweets;
 public class EngagementFilter {
 
 	/**
-	 * A Comparator object used to sort tweets by Retweets in descending order
+	 * Object of class ComparatorForRetweets
+	 * @see com.TiseniGiri.ProgettoTiseniGiri.Utility.ComparatorForRetweets
 	 */
 	private ComparatorForRetweets c = new ComparatorForRetweets();
 
 	/**
-	 * A Comparator object used to sort tweets by Favorites in descending order
+	 * Object of class ComparatorForFavorites
+	 * @see com.TiseniGiri.ProgettoTiseniGiri.Utility.ComparatorForFavorites
 	 */
 	private ComparatorForFavorites f = new ComparatorForFavorites();
 
 	/**
-	 * A Comparator object used to sort tweets by Retweets in descending order, and
-	 * then by Favorites in descending order, if two tweets have the same number of
-	 * Retweets
+	 * @see java.util.Comparator<Tweet>
 	 */
 	private Comparator<Tweet> cmp = c.thenComparing(f);
 
 	/**
-	 * object of class number filter used to select a fixed number of tweets
+	 * object of class number filter
+	 * @see com.TiseniGiri.ProgettoTiseniGiri.Filter.NumberFilter
 	 */
 	private NumberFilter n = new NumberFilter();
 

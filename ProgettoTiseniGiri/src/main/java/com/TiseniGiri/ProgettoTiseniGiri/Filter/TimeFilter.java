@@ -22,11 +22,15 @@ public class TimeFilter extends NumericalFilter {
 
 	/**
 	 * Date object representing the parsed date given in input by user
+	 * 
+	 * @see java.util.Date
 	 */
 	private Date User_date;
 
 	/**
 	 * Date object representing the parsed date of the current tweet
+	 * 
+	 * @see java.util.Date
 	 */
 	private Date Tweet_date;
 
