@@ -34,7 +34,7 @@ public class EngagementFilter {
 	private Comparator<Tweet> cmp = c.thenComparing(f);
 
 	/**
-	 * object of class number filter
+	 * Object of class number filter
 	 * @see com.TiseniGiri.ProgettoTiseniGiri.Filter.NumberFilter
 	 */
 	private NumberFilter n = new NumberFilter();
