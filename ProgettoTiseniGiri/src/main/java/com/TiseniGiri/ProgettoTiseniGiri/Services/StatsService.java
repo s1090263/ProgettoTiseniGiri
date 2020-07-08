@@ -37,11 +37,12 @@ public class StatsService extends GeneralService {
 		SingleKeyHashMap<String,List<Object>> stats = null;
 		
 		ObjectMapper mapper = new ObjectMapper();
-		final ObjectNode node = new ObjectMapper().readValue(requests, ObjectNode.class);
+		ObjectNode node = mapper.readValue(requests, ObjectNode.class);
 		filters = mapper.readValue(node.get("filters").toString(),SingleKeyHashMap.class);
 		stats = mapper.readValue(node.get("stats").toString(),SingleKeyHashMap.class);
 		String filterString = mapper.writeValueAsString(filters);
 		List<Tweet> filteredTweets = FilterService.getFilteredTweets(url, filterString);
+		
 		
 		return statCycler(stats,filteredTweets);
 	}
