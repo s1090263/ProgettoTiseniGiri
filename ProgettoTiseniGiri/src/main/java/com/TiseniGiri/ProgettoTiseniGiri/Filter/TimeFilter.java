@@ -50,8 +50,7 @@ public class TimeFilter extends NumericalFilter {
 	 * SimpleDate object used for parsing the String object representing the current
 	 * tweet's date
 	 */
-	private final SimpleDateFormat Twitterformatter = new SimpleDateFormat("EEE MMM dd HH:mm:ss ZZZZZ yyyy",
-			Locale.ENGLISH);
+	private final SimpleDateFormat Twitterformatter = new SimpleDateFormat("EEE MMM dd HH:mm:ss ZZZZZ yyyy", Locale.ENGLISH);
 
 	/**
 	 * @throws IncorrectDateFormatException {@inheritDoc}
@@ -70,7 +69,7 @@ public class TimeFilter extends NumericalFilter {
 			try {
 				Tweet_date = Twitterformatter.parse(t.getCreated_at());
 			} catch (ParseException e) {
-				throw new ExtremesException("ciao");
+				throw new IncorrectDateFormatException("Date's format is incorrect");
 			}
 			if (User_date.before(Tweet_date))
 				list1.add(t);
@@ -133,6 +132,8 @@ public class TimeFilter extends NumericalFilter {
 	 */
 	@Override
 	public List<Tweet> between(List<Tweet> list, Object stringDateTop, Object stringDateBottom) {
+		User_date = new Date();
+		Tweet_date = new Date();
 		try {
 			User_date = Userformatter.parse((String) stringDateTop);
 		} catch (ParseException e) {

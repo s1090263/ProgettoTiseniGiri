@@ -42,7 +42,7 @@ public class ProgettoTiseniGiriApplicationRequestTest {
 	private Date datetop;
 	private Date datebottom;
 	private Date datetweet;
-	private final SimpleDateFormat Userformatter = new SimpleDateFormat("MMM dd HH:mm:ss yyyy", Locale.ENGLISH);
+	private final SimpleDateFormat Userformatter = new SimpleDateFormat("MMM dd HH:mm:ss yyyy", Locale.ITALIAN);
 	private final SimpleDateFormat Twitterformatter = new SimpleDateFormat("EEE MMM dd HH:mm:ss ZZZZZ yyyy",Locale.ENGLISH);
 
 
@@ -88,9 +88,9 @@ public class ProgettoTiseniGiriApplicationRequestTest {
 	
 	@Test
 	void timeTest() throws ParseException {
-		list1 = time.between(list, "Jul 07 05:00:00 2020" , "Jul 05 21:00:00 2020");
-		datetop = Userformatter.parse("Jul 07 05:00:00 2020" );
-		datebottom = Userformatter.parse("Jul 05 21:00:00 2020");
+		list1 = time.between(list, "lug 07 05:00:00 2020" , "lug 05 21:00:00 2020");
+		datetop = Userformatter.parse("lug 07 05:00:00 2020" );
+		datebottom = Userformatter.parse("lug 05 21:00:00 2020");
 		datetweet = Twitterformatter.parse(list1.get(0).getCreated_at());
 		assertTrue(datetweet.after(datebottom) && datetweet.before(datetop));
 	}
