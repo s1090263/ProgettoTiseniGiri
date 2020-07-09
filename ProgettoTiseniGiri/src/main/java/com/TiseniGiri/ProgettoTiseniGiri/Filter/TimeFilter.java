@@ -26,6 +26,12 @@ public class TimeFilter extends NumericalFilter {
 	 * @see java.util.Date
 	 */
 	private Date User_date;
+	/**
+	 * Date object representing the second parsed date given in input by user when he wants to use between method
+	 * 
+	 * @see java.util.Date
+	 */
+	private Date User_date1;
 
 	/**
 	 * Date object representing the parsed date of the current tweet
@@ -121,5 +127,30 @@ public class TimeFilter extends NumericalFilter {
 		}
 		return list1;
 	}
-
+	
+	/**
+	 * @throws IncorrectDateFormatException {@inheritDoc}
+	 */
+	@Override
+	public List<Tweet> between(List<Tweet> list, Object stringDateTop, Object stringDateBottom) {
+		try {
+			User_date = Userformatter.parse((String) stringDateTop);
+		} catch (ParseException e) {
+			throw new IncorrectDateFormatException("Date's format is incorrect");
+		}
+		try {
+			User_date1 = Userformatter.parse((String) stringDateBottom);
+		} catch (ParseException e) {
+			throw new IncorrectDateFormatException("Date's format is incorrect");
+		}
+		if (User_date.before(User_date1))
+			throw new ExtremesException("The top value must be higher that the bottom value");
+		List<Tweet> list1 = new ArrayList<Tweet>(list);
+		list1 = greater(list, stringDateBottom);
+		list1 = lower(list1, stringDateTop);
+		return list1;
+	}
 }
+
+
+
