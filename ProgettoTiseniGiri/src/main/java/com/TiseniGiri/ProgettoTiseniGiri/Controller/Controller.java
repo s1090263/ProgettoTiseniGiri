@@ -42,6 +42,13 @@ public class Controller {
 			throws JsonMappingException, JsonProcessingException {
 		return new ResponseEntity<>(GeneralService.getTweets(UrlSetter.getUrl(topic, num)), HttpStatus.OK);
 	}
+	/**
+	 * General method used to handle the request of metadata
+	 */ 
+	@GetMapping("/metadata")
+	public ResponseEntity<Object> getAllMetadata(){
+		return new ResponseEntity<>(GeneralService.getTheMetadata(), HttpStatus.OK);
+	}
 
 	/**
 	 * Method used to handle the request of a number of filtered tweets

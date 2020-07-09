@@ -2,6 +2,7 @@ package com.TiseniGiri.ProgettoTiseniGiri.Services;
 
 import java.util.List;
 
+import com.TiseniGiri.ProgettoTiseniGiri.Model.Metadata;
 import com.TiseniGiri.ProgettoTiseniGiri.Model.Tweet;
 import com.TiseniGiri.ProgettoTiseniGiri.Utility.Downloader;
 import com.TiseniGiri.ProgettoTiseniGiri.Utility.Parser;
@@ -31,5 +32,12 @@ public class GeneralService {
 		data = Downloader.downloadData(url);
 		List<Tweet> tweets = Parser.dataParser(data);
 		return tweets;
+	}
+
+	/**
+	 * @return a TreeMap<String,String[]>
+	 */
+	public static Object getTheMetadata() {
+		return Metadata.getMetadata();
 	}
 }
