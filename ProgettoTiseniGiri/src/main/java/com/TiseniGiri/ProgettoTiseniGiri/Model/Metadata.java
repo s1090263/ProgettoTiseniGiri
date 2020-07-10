@@ -1,6 +1,7 @@
 
 package com.TiseniGiri.ProgettoTiseniGiri.Model;
 
+import java.util.HashMap;
 import java.util.TreeMap;
 
 /**
@@ -10,73 +11,93 @@ import java.util.TreeMap;
  * @author Matteo Giri
  */
 public class Metadata {
-
-	/**
-	 * array containing description and type of parameter id
-	 */
-	private static final String[] idList = new String[] { "Description: tweet's id", "type:long" };
-	/**
-	 * array containing description and type of parameter created_at
-	 */
-	private static final String[] created_atList = new String[] {
-			"Description: the date in which the tweet was posted on the page", "type:String" };
-	/**
-	 * array containing description and type of parameter metadata
-	 */
-	private static final String[] metadataList = new String[] {
-			"Description: map containing the two fields, iso_language_code, and result_type(recent,mixed or popular) ",
-			"type:Map<String><String>" };
-	/**
-	 * array containing description and type of parameter user
-	 */
-	private static final String[] userList = new String[] {
-			"Description: an object containing information about the user who posted a specific tweet", "type:Object" };
-	/**
-	 * array containing description and type of parameter retweet_count
-	 */
-	private static final String[] retweetList = new String[] { "Description: count of retweets of the current tweet",
-			"type:Integer" };
-	/**
-	 * array containing description and type of parameter favorite_count
-	 */
-	private static final String[] favoriteList = new String[] { "Description: count of favorites of the current tweet",
-			"type:Integer" };
-	/**
-	 * array containing description and type of parameter lang
-	 */
-	private static final String[] langList = new String[] { "Description: language of tweet text", "type:String" };
-	/**
-	 * array containing description and type of parameter entities
-	 */
-	private static final String[] entitiesList = new String[] {
-			"Description: an object containing some features of tweets such as hashtags", "type:Object" };
-
 	/**
 	 * A map which contains all the metadata of the tweets
 	 */
-	private static TreeMap<String, String[]> metadata = new TreeMap<String, String[]>() {
+	private static TreeMap<String, String[]> tweetMetadata = new TreeMap<String, String[]>() {
 		/**
 		 * serial version ID of map
 		 */
 		private static final long serialVersionUID = 1L;
 
 		{
-			put("id", idList);
-			put("created_at", created_atList);
-			put("metadata", metadataList);
-			put("user", userList);
-			put("retweet_count", retweetList);
-			put("favorite_count", favoriteList);
-			put("lang", langList);
-			put("entities", entitiesList);
+			put("id", new String[] { "Description: tweet's id", "type:long" });
+			put("created_at",
+					new String[] { "Description: the date in which the tweet was posted on the page", "type:String" });
+			put("metadata", new String[] {
+					"Description: map containing the two fields, iso_language_code, and result_type(recent,mixed or popular) ",
+					"type:Map<String><String>" });
+			put("user",
+					new String[] {
+							"Description: an object containing information about the user who posted a specific tweet",
+							"type:Object" });
+			put("retweet_count",
+					new String[] { "Description: count of retweets of the current tweet", "type:Integer" });
+			put("favorite_count",
+					new String[] { "Description: count of favorites of the current tweet", "type:Integer" });
+			put("lang", new String[] { "Description: language of tweet text", "type:String" });
+			put("entities", new String[] { "Description: an object containing an array of hashtags", "type:Object" });
+		}
+	};
+	/**
+	 * A map which contains all the metadata of the user
+	 */
+	private static TreeMap<String, String[]> userMetadata = new TreeMap<String, String[]>() {
+		/**
+		 * serial version ID of map
+		 */
+		private static final long serialVersionUID = 2L;
+
+		{
+			put("id", new String[] { "Description: user's id", "type:String" });
+			put("name", new String[] { "Description: user's name and surname ", "type:String" });
+			put("followers_count",
+					new String[] { "Description: the number of follwers of the users ", "type:Integer" });
+			put("friends_count", new String[] { "Description: the number of friends of the users ", "type:Integer" });
+			put("favourites_count", new String[] { "Description: number of tweet's the user liked", "type:Integer" });
+			put("statuses_count", new String[] { "Description: number of tweets created by the user", "type:Integer" });
+			put("verified", new String[] { "Description: tells if the user has a verified account", "type:boolean" });
+		}
+	};
+	/**
+	 * A map which contains all the metadata of the hashtags
+	 */
+	private static TreeMap<String, String[]> hashtagsMetadata = new TreeMap<String, String[]>() {
+		/**
+		 * serial version ID of map
+		 */
+		private static final long serialVersionUID = 3L;
+
+		{
+			put("text", new String[] { "Description: text of the hashtag", "type:String" });
+			put("indices", new String[] {
+					"Description:  they indicates the offsets within the tweet text where the hashtag begins and ends. ",
+					"type: Array of Integers" });
 		}
 	};
 
 	/**
-	 * method used to get metadata
+	 * The map which contains all the metadata
 	 */
-	public static TreeMap<String, String[]> getMetadata() {
-		return metadata;
+	private static HashMap<String , TreeMap<String, String[]>> Metadata = new HashMap<String , TreeMap<String, String[]>>(){
+		/**
+		 * serial version Id of map
+		 */
+		private static final long serialVersionUID = 4L;
+
+	{
+		put("Tweet's Metadata", tweetMetadata);
+		put("User's Metadata", userMetadata);
+		put("Hashtag's Metadata", hashtagsMetadata);
+		
+	}};
+	
+	/**
+	 * method used to get metadata
+	 * @return a HashMap<TreeMap<String,String[]>>
+	 */
+	public static HashMap< String, TreeMap<String, String[]>> getMetadata() {
+		return Metadata;
 	}
 
 }

@@ -16,7 +16,7 @@ public class Hashtag {
 	private String text;
 
 	/**
-	 * The hashtag's indices, witch represents an array of integers indicating the
+	 * The hashtag's indices, which represents an array of integers indicating the
 	 * offsets within the tweet text where the hashtag begins and ends.
 	 */
 	private int[] indices;
