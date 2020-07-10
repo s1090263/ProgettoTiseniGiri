@@ -119,8 +119,8 @@ public class StatsService extends GeneralService {
 		Map<String, List<String>> completedStats = new HashMap<String, List<String>>();
 
 		for (Map.Entry<String, List<Object>> entry : stats.entrySet()) {
-			String parameter = entry.getValue().get(0).toString(); // parametro su cui fare statistica
-			String stat = entry.getValue().get(1).toString(); // tipo di statistica da fare
+			String parameter = entry.getValue().get(0).toString(); //parameter on which make the stat
+			String stat = entry.getValue().get(1).toString(); // type of stat to be done
 			List<String> list = new ArrayList<String>();
 			list.add(parameter);
 			list.add(stat);
