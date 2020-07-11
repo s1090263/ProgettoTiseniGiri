@@ -39,7 +39,7 @@ public class GeneralService {
 	/**
 	 * Method used to obtain the metadata
 	 * 
-	 * @return a TreeMap<String,String[]>
+	 * @return a hashmap of metadata
 	 */
 	public static Object getTheMetadata() {
 		return Metadata.getMetadata();

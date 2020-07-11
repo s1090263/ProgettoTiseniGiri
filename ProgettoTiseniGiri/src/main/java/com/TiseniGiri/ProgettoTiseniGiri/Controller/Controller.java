@@ -44,6 +44,7 @@ public class Controller {
 	}
 	/**
 	 * General method used to handle the request of metadata
+	 * @return the metadata
 	 */ 
 	@GetMapping("/metadata")
 	public ResponseEntity<Object> getAllMetadata(){

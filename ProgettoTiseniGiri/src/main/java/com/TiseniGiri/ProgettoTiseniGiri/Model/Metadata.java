@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.TreeMap;
 
 /**
- * Class who models and gives to user metadata
+ * Class who models and gives metadata to the user
  * 
  * @author Lorenzo Tiseni
  * @author Matteo Giri
@@ -79,24 +79,26 @@ public class Metadata {
 	/**
 	 * The Map which contains all the metadata
 	 */
-	private static HashMap<String , TreeMap<String, String[]>> Metadata = new HashMap<String , TreeMap<String, String[]>>(){
+	private static HashMap<String, TreeMap<String, String[]>> Metadata = new HashMap<String, TreeMap<String, String[]>>() {
 		/**
 		 * serial version Id of map
 		 */
 		private static final long serialVersionUID = 4L;
 
-	{
-		put("Tweet's Metadata", tweetMetadata);
-		put("User's Metadata", userMetadata);
-		put("Hashtag's Metadata", hashtagsMetadata);
-		
-	}};
-	
+		{
+			put("Tweet's Metadata", tweetMetadata);
+			put("User's Metadata", userMetadata);
+			put("Hashtag's Metadata", hashtagsMetadata);
+
+		}
+	};
+
 	/**
 	 * method used to get metadata
-	 * @return a HashMap<TreeMap<String,String[]>>
+	 * 
+	 * @return a HashMap of three maps of metadata
 	 */
-	public static HashMap< String, TreeMap<String, String[]>> getMetadata() {
+	public static HashMap<String, TreeMap<String, String[]>> getMetadata() {
 		return Metadata;
 	}
 
