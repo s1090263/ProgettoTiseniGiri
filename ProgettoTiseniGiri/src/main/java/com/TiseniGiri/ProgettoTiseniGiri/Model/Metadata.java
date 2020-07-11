@@ -77,7 +77,7 @@ public class Metadata {
 	};
 
 	/**
-	 * The map which contains all the metadata
+	 * The Map which contains all the metadata
 	 */
 	private static HashMap<String , TreeMap<String, String[]>> Metadata = new HashMap<String , TreeMap<String, String[]>>(){
 		/**
