@@ -23,6 +23,8 @@ public class GeneralService {
 	private static String data;
 
 	/**
+	 * Method used to get all the tweets requested
+	 * 
 	 * @param url the url that rapresents the request to the Twitter's API
 	 * @return a list of tweets
 	 * @throws JsonMappingException
@@ -35,6 +37,8 @@ public class GeneralService {
 	}
 
 	/**
+	 * Method used to obtain the metadata
+	 * 
 	 * @return a TreeMap<String,String[]>
 	 */
 	public static Object getTheMetadata() {
