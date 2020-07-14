@@ -41,3 +41,13 @@ Each field refers to a different field of tweet object which can be both a strin
   Ex. { "1" : ["Hashtag","equal", 1]} returns all tweets with a number of hashtags equal to one 
 - between, which returns all the tweets with a number of likes,retweets or hashtags, lower than the first number passed from user and greater than the second   
   Ex. { "1" : ["Favorites","between", 5,3]} returns all the tweet with a number of likes included between three and five
+  
+The field User refers to an object which as a parameter a string called "name", and also the field hashtag refers to another parameter which is the text of the hashtag which is a String parameter. For this reason the filters working with these parameters are categorised as "String Filters" and for them there is only one method avalaible to apply the filter:
+
+- stringSearch, which returns all the tweet containing a string parameter identical to the string passed in input from the user(the method is case sensitive and takes into account spaces )
+  Ex. { "1" : ["Hashtag","stringSearch","cusancona"]} returns all the tweet with hashtag text "cusancona"
+  Ex. { "1" : ["User","stringSearch","Emanuele Frontoni"]} returns all the tweet posted by Emanuele Frontoni on that official page "
+  
+The field Time refers also to a string object, namely the parameter created_at of tweet object, which indicates when the tweet was posted on the page. So in order to realise a filter on this particular field we must convert the string into a Date object in Java. Then using some method of the class Date whe can implements four different filters similar to numerical filters for the name, but with a lot a difference in term of parametrs and implementation:
+
+- greater
