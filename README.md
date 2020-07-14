@@ -23,21 +23,21 @@ In order to make a filter request user must have a basic knowledge of JSON synta
 Key parameter must be different for each filter, otherwise an exception will be thrown.
 Field parameter must be one of the following words:
 
--Favorites
--Retweets 
--Hashtag 
--User
--Time
--Engagement
+* Favorites
+* Retweets 
+* Hashtag 
+* User
+* Time
+* Engagement
 
 Method's name represents the name of the method which apply the filter to the list of tweets and method's parameter are the input parameters for that method.
 Each field refers to a different field of tweet object which can be both a string, a number or even a date. The fields Favorites,Reetweets and Hashtag refers to numerical features of tweet which are number of like, number of retweets and number of hashtag, and for this reason they are categorised as "numerical filter". For this type of filter are avalaible four methods to apply the filter:
 
--greater, which returns all the tweets with  a number of likes, retweets or hashtags, higher than the number passed from the user 
+- greater, which returns all the tweets with  a number of likes, retweets or hashtags, higher than the number passed from the user    
   Ex. { "1" : ["Favorites","greater", 5]} returns all tweets with a number of likes higher than five
--lower, which returns all the tweets with  a number of likes, retweets or hashtags, lower than the number passed from the user 
+- lower, which returns all the tweets with  a number of likes, retweets or hashtags, lower than the number passed from the user     
   Ex. { "1" : ["Retweets","lower", 3]} returns all tweets with a number of retweets lower than three
--equal, which returns all the tweets with the same number of likes, retweets or hashtags, passed from the user 
+- equal, which returns all the tweets with the same number of likes, retweets or hashtags, passed from the user     
   Ex. { "1" : ["Hashtag","equal", 1]} returns all tweets with a number of hashtags equal to one 
--between, which returns all the tweets with a number of likes,retweets or hashtags, lower than the first number passed from user and greater than the second
+- between, which returns all the tweets with a number of likes,retweets or hashtags, lower than the first number passed from user and greater than the second   
   Ex. { "1" : ["Favorites","between", 5,3]} returns all the tweet with a number of likes included between three and five
