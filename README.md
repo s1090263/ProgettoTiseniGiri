@@ -67,7 +67,7 @@ To conclude the analysis of filters we show an example of a request of multiple 
 
 - Ex. { 
        "1" : ["Hashtag","greater", 0],                                                          
-       "2" : ["Engagement","sortForRetweets", 40]
+          "2" : ["Engagement","sortForRetweets", 40]
        }
 
 Filters in that request body are executed in the order they are written, and these two filters in that order return to user the list of tweet requested in project commit, on which we can make stats. More over adding filters to these two is not difficult beacuse it is only necessary to add a new key(for example "3") specifying the field,  method and parameters( for example we can also filter that list of tweet according to the date in which they were posted adding in that JSON body "3" : ["Time","greater","Tue Jul 14 10:30:00 +0000 2020"]). It is recommended to indicates keys always with numbers between two double quotes.
