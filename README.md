@@ -58,5 +58,21 @@ The field Time refers also to a string object, namely the parameter created_at o
   Ex. { "1" : ["Time", "equal", "Sun Jul 12 20:40:00 +0000 2020"]}
 - between, which returns all the tweets posted after the first date given as input from the user and before the second                                                  
   Ex. { "1" : ["Time", "between", "Tue Jul 14 10:30:00 +0000 2020","Mon Jul 13 12:30:00 +0000 2020"]}
-  
-  
+
+The last field Engagement refers to a particular filter that was requested in the application commit. These type of field is related to a filter which selects a certain number of tweets with the most valuable engagement parameters. As engagement parameters we chose the number of retweets and the number of like of a tweet giving more importance to the first. The method named "sortForRetweets" associated to the filter sorts the tweets in descending order using firstly the number of retweets, and only if two posts has the same number of retweets, it ordinates them for the numbers of like in descending order. After the sorting operation the method selects only the first num tweets of the list where num is passed by the user in the body of the request
+
+- Ex. { "1" : ["Engagement","sortForRetweets", 40]} returns the first 40 tweets with most valuable engagement parameters
+
+To conclude the analysis of filters we show an example of a request of multiple filters in the same JSON body:
+
+-Ex. { 
+       "1" : ["Hashtag","greater", 0],
+       "2" : ["Engagement","sortForRetweets", 40]
+       }
+
+Filters in that request body are executed in the order they are written, and these two filters in that order return to user the list of tweet requested in project commit, on which we can make stats. More over adding filters to these two is not difficult beacuse it is only necessary to add a new key(for example "3") specifying the field,  method and parameters( for example we can also filter that list of tweet according to the date in which they were posted adding in that JSON body "3" : ["Time","greater","Tue Jul 14 10:30:00 +0000 2020"]). It is recommended to indicates keys always with numbers between two double quotes.
+       
+
+### Making a stats Request
+Making a stats request is similar to make requests for filters, in fact the correct JSON symtax to make a stats request is:
+{ "key" : [ "Field", "Method's name", "Method's parameters"] }
