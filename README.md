@@ -65,8 +65,8 @@ The last field Engagement refers to a particular filter that was requested in th
 
 To conclude the analysis of filters we show an example of a request of multiple filters in the same JSON body:
 
--Ex. { 
-       "1" : ["Hashtag","greater", 0],
+- Ex. { 
+       "1" : ["Hashtag","greater", 0],                                                          
        "2" : ["Engagement","sortForRetweets", 40]
        }
 
