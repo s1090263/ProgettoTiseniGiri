@@ -48,6 +48,15 @@ The field User refers to an object which as a parameter a string called "name", 
   Ex. { "1" : ["Hashtag","stringSearch","cusancona"]} returns all the tweet with hashtag text "cusancona"                       
   Ex. { "1" : ["User","stringSearch","Emanuele Frontoni"]} returns all the tweet posted by Emanuele Frontoni on that official page
   
-The field Time refers also to a string object, namely the parameter created_at of tweet object, which indicates when the tweet was posted on the page. So in order to realise a filter on this particular field we must convert the string into a Date object in Java. Then using some method of the class Date whe can implements four different filters similar to numerical filters for the name, but with a lot a difference in term of parametrs and implementation:
+The field Time refers also to a string object, namely the parameter created_at of tweet object, which indicates when the tweet was posted on the page. So in order to realise a filter on this particular field we must convert the string into a Date object in Java. Then using some method of the class Date whe can implements four different filters similar to numerical filters for the name, but with a lot a difference in term of parameters and implementation. The dates which the user will gives in input in the JSON body must be written as string in the correct format which is the twitter's date format ( Ex. "Tue Jul 14 14:00:00 +0000 2020, where +0000 indicates time zone). Methods are the following
 
-- greater
+- greater, which returns all the tweets posted after the date given as input from the user                                                 
+  Ex. { "1" : ["Time", "greater", "Tue Jul 14 10:30:00 +0000 2020"]}
+- lower, which returns all the tweets posted before the date given as input from the user                                                 
+  Ex. { "1" : ["Time", "lower", "Mon Jul 13 12:30:00 +0000 2020"]}
+- equal, which returns all the tweets posted in the same date given as input from the user                                                 
+  Ex. { "1" : ["Time", "equal", "Sun Jul 12 20:40:00 +0000 2020"]}
+- between, which returns all the tweets posted after the first date given as input from the user and before the second                                                  
+  Ex. { "1" : ["Time", "between", "Tue Jul 14 10:30:00 +0000 2020","Mon Jul 13 12:30:00 +0000 2020"]}
+  
+  
