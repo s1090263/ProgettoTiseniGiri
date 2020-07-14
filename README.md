@@ -75,4 +75,15 @@ Filters in that request body are executed in the order they are written, and the
 
 ### Making a stats Request
 Making a stats request is similar to make requests for filters, in fact the correct JSON symtax to make a stats request is:
+
 { "key" : [ "Field", "Method's name", "Method's parameters"] }
+
+Where the key is unique even for the stats; Field represents the parameter of tweet object on which we want to make stats, and ii followed by the name of the method realising a precise stats and its parameters. Field parameter can be:
+
+- Favorites
+- Retweets
+- Hashtag
+
+Field "Favorites" refers to the parameter indicating the number of likes of a tweet, while fields Retweets and Hashtags refers respectively to the number of retweets of a tweet and the number of hashatag of a tweet. For each of these numerical parameters we have three methods that realises stats on tweets or on filtered tweets:
+
+- average, which returns the average of likes,retweets, or number of hashtags of tweet's list
