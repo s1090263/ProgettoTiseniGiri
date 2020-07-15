@@ -109,7 +109,7 @@ Furthermore it is possible to combine filters and stats requests in order to mak
 ~~~
 {
   "stats": {  
-    "1" : ["Hashtag","ferquency", 3],                                                                                                
+    "1" : ["Hashtag","ferquency", 3],                                                   
     "2" : ["Favorites","average"]
    },
   "filters": {
