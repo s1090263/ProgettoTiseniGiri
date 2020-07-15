@@ -65,8 +65,12 @@ The last field "Engagement" refers to a particular filter that was requested in 
 
 To conclude the analysis of filters we show an example of a request with multiple filters in the same JSON body:
 
-- Ex. {"1" : ["Hashtag","greater", 0],                                                          
-       "2" : ["Engagement","sortForRetweets", 40]}
+~~~
+{
+  "1" : ["Hashtag","greater", 0],                                                          
+  "2" : ["Engagement","sortForRetweets", 40]
+}
+~~~
 
 Filters in that request body are executed in the order they are written, and these two filters in that order return to the user the list of tweets requested in the project commit, on which we can make stats. Moreover adding filters to these two is not difficult beacuse it is only necessary to add a new key(for example "3") specifing the field,  method and parameters( for example we can also filter that list of tweets according to the date in which they were posted adding in that JSON body '"3" : ["Time","greater","Tue Jul 14 10:30:00 +0000 2020"]'). It is recommended to indicate keys always with numbers between two double quotes.
        
@@ -92,15 +96,16 @@ Field "Favorites" refers to the parameter indicating the number of likes of a tw
   Ex. { "1" : ["Hashtags","standardDeviation"]} returns Hashtags standardDeviation of list
   
 Even for the stats there is the possibility to make multiple stats on the same list of tweets sending only one request to the application. for the filters, every stats request is identified by a unique key and so in order to make a multiple stats request it needs to be written as:
-
-- Ex. {
-        "1" : ["Hashtag","ferquency", 3],                                                          
-        "2" : ["Favorites","average"]
-      }
+ 
+~~~
+{
+  "1" : ["Hashtag","ferquency", 3],                                                          
+  "2" : ["Favorites","average"]
+}
+~~~
        
 Furthermore it is possible to combine filters and stats requests in order to make stats on a filtered list of tweets. The only new thing to add in this case to the JSON syntax of the body of the request is the specification on which single request is a filter and which is a stat as in the following example:
 
-- Ex.
 ~~~
 {
   "stats": {  
