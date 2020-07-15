@@ -152,19 +152,19 @@ Package "filters" is composed of the classes realising filters on the list of tw
 
 ### Stats
 <img src = UML%20Diagrams/Class%20diagrams/Stats%20Class%20Diagram.jpg>
-Package Stats is composed by the classes making stats on the list of tweet. Stats contains also another package called Interfaces in which we defined an interface called Stat implemented by all the classes of the package 
+Package "Stats" is composed by the classes making stats on the list of tweets. Stats contains also another package called "Interfaces" in which we defined an interface called "Stat" implemented by all the classes of the package.
 
 ### Exception
 <img src = UML%20Diagrams/Class%20diagrams/Exceptions%20Class%20Diagram.jpg>
-Package Exception is an important package containing fundamental classes for the application. Firstly here we find the package "ExceptionHandler" containing the class ExceptionHandler which is responsible for the management of Spring exceptions when a request is made. This class uses then the class Error, stored in the same package, to print customised error messages in Postman. Then we have also other six classes in package Exception which model the personalized exceptions we created for our application:
+Package "Exception" is an important package containing fundamental classes for the application. Firstly here we find the package "ExceptionHandler" containing the class "SpringExceptionResolver" which is responsible for the management of Spring exceptions when a request is made. This class then uses the class "Error", stored in the same package, to print customised error messages in Postman. Then we also have other six classes in package Exception which model the personalized exceptions we created for our application:
 
 - DuplicatedKeyException : It is thrown when in the map containing filter or stat there is a duplicated key
 - EmptyListException : Thrown when the list on which we want to make stats is empty
-- ExtremesException: Thrown by between method when the first object pass to this method is "lower" than the second
+- ExtremesException: Thrown by between method when the first object passed to this method is "lower" than the second
 - IncorrectDateFormatException: Thrown when the format of the date given as input by user does not match twitter's format
 - NegativeNumberException: Thrown by methods greater,lower and equal when they receive in input a negative parameter
 - OutOfReachException: Thrown when user asks a number of tweets higher than the number of tweets avalaible
 
 ### Utility
 <img src = UML%20Diagrams/Class%20diagrams/Utility%20Class%20Diagram.jpg>
-Package Utility contains all the classes used by other classes of the application in order to help them to accomplish some results. It contains the classes Download and Parser used by the GeneralService class to download JSON file with tweets and to parse it into a tweet's list. Then here we find also the class SingleKeyHashMap used in order to throw the DuplicatedKeyException, and the classes ComparatorForFavorites and ComparatorForRetweets used in class EngagementFilter as sort rule in the algorythm sort of the List. LAst but not least there is the class UrlSetter allowing the user to make stats and apply filters on tweets of a different official page than the default one.
+Package "Utility" contains all the classes used by other classes of the application in order to help them to accomplish some results. It contains the classes "Download" and "Parser" used by the GeneralService class to download JSON file with tweets and to parse it into a tweet's list. Then here we also find the class "SingleKeyHashMap" used in order to throw the "DuplicatedKeyException", and the classes "ComparatorForFavorites" and "ComparatorForRetweets" used in the class "EngagementFilter" as sort rule in the algorythm sort of the List. Last but not least there is the class "UrlSetter" allowing the user to make stats and apply filters on tweets of a different official page than the default one.
