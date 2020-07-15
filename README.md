@@ -126,9 +126,9 @@ We will now show how the application is structured in packages and class. There 
 
 - Controller
 - Exceptions, containing exception classes and the exception handler
-- Filter, containing classes that realises filters on the list
+- Filter
 - Model
-- Service, containing the services of the application
+- Service
 - Stats, containing the classes which make the stats
 - Utility, containing some useful classes used by the application
 
@@ -144,4 +144,7 @@ Package Controller contains the class controller which handles external requests
 
 ### Services
 <img src = UML%20Diagrams/Class%20diagrams/Services%20Class%20Diagram.jpg>
-Package Services contains the classes which realises services for the application. GeneralService deals with the request of the list of tweets. Classes FilterService and StatsService respectively deal with the request of filtered list of tweets and of the stats on the list. These Classes inherit from the class GeneralService in order to have the necessary features to get the unfiltered list of tweets and both use a particular map stored in package Utility named "SingleKeyHashMAp" which throws an exception when there's a duplicated key in the map. Furthermore both classes FilterService and StatsService calls a method of another class named "ExecuterForService" which allows us, using java reflection, to find the correct method applying the requested stats or filter.
+Package Services contains the classes which realise services for the application. GeneralService deals with the request of the list of tweets and in this purpose it uses two external classes that are in package "Utility",allowing GeneralService to download the JSON file containing tweets and parse it into a list of tweets. Classes FilterService and StatsService respectively deal with the request of filtered list of tweets and of the stats on the list. These Classes inherit from the class GeneralService in order to have the necessary features to get the unfiltered list of tweets and both use a particular map stored in package Utility named "SingleKeyHashMAp" which throws an exception when there's a duplicated key in the map. Furthermore both classes FilterService and StatsService call methods of another class named "ExecuterForService" which allows us, using java reflection, to find the correct method applying the requested stats or filter.
+### Filters
+<img src = UML%20Diagrams/Class%20diagrams/Filter%20Class%20Diagram.jpg>
+Package filters is composed by the classes realising filters on the list of tweet. In this class there is another package called "InterfacesAndAbstractClasses" which contains an abstract class NumericalFilter and an interface named StringFilter. All the classes realising filters of numerical type inherit from NumericalFilter defining only the three methods greater,lower and equal because the method between is already implemented and similar for all classes(except for class Timefilter whcih redefines also the between method). All the classes realising filters which use a string as a parameter implement the interface StringFilter. Moreover we have two classes EngagementFilter and NumberFilter allowing us to select tweets with most valuable engagement parameters. These classes use other two classes stored in package Utility which are implementation of Comparator interface and permit to Engagement filter to use the sort algorythm of lists in java
