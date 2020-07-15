@@ -140,4 +140,8 @@ Package Model contains the model of some objects as tweets,entities,hashtags,use
 
 ### Controller package
 <img src = UML%20Diagrams/Class%20diagrams/Controller%20Class%20Diagram.jpg>
-Package Controller contains the class controller which handles external requests to the application made for example by postman
+Package Controller contains the class controller which handles external requests made for example by postman
+
+### Services
+<img src = UML%20Diagrams/Class%20diagrams/Services%20Class%20Diagram.jpg>
+Package Services contains the classes which realises services for the application. GeneralService deals with the request of the list of tweets. Classes FilterService and StatsService respectively deal with the request of filtered list of tweets and of the stats on the list. These Classes inherit from the class GeneralService in order to have the necessary features to get the unfiltered list of tweets and both use a particular map stored in package Utility named "SingleKeyHashMAp" which throws an exception when there's a duplicated key in the map. Furthermore both classes FilterService and StatsService calls a method of another class named "ExecuterForService" which allows us, using java reflection, to find the correct method applying the requested stats or filter.
