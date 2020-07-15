@@ -99,7 +99,7 @@ Even for the stats there is the possibility to make multiple stats on the same l
  
 ~~~
 {
-  "1" : ["Hashtag","ferquency", 3],                                                          
+  "1" : ["Hashtag","frequency", 3],                                                          
   "2" : ["Favorites","average"]
 }
 ~~~
@@ -109,7 +109,7 @@ Furthermore it is possible to combine filters and stats requests in order to mak
 ~~~
 {
   "stats": {  
-    "1" : ["Hashtag","ferquency", 3],                                                   
+    "1" : ["Hashtag","frequency", 3],                                                   
     "2" : ["Favorites","average"]
    },
   "filters": {
