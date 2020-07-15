@@ -110,3 +110,23 @@ Furthermore it is possible to combine filters and stats requests in order to mak
 
 This request is sent to the route tweets/filter/stats. Besides it is not important in which order we specify filter and stats. We can both specify the stats and then the filters, or specify prevously the filters and then the stats.
 
+# Application structure
+We will now show how the application is structured in packages and class. There are inside the package com.TiseniGiri.ProgettoTiseniGiri seven different packages:
+
+- Controller
+- Exceptions, containing exception classes and the exception handler
+- Filter, containing classes that realises filters on the list
+- Model
+- Service, containing the services of the application
+- Stats, containing the classes which make the stats
+- Utility, containing some useful classes used by the application
+
+We will now see how the package ares structured in classes through the class diagrams:
+
+### Model package
+<img src = UML%20Diagrams/Class%20diagrams/Model%20Class%20Diagram.jpg>
+Package Model contains the model of some objects as tweets,entities,hashtags,users and metadata
+
+### Controller package
+<img src = UML%20Diagrams/Class%20diagrams/Controller%20Class%20Diagram.jpg>
+Package Controller contains the class controller which handles external requests to the application made for example by postman
