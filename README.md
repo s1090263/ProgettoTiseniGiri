@@ -72,43 +72,49 @@ Filters in that request body are executed in the order they are written, and the
        
 
 ### Making a stats Request
-Making a stats request is similar to make requests for filters, in fact the correct JSON symtax to make a stats request is:
+Making a stats request is similar to making requests for filters, in fact the correct JSON symtax to make a stats request is:
 
 { "key" : [ "Field", "Method's name", "Method's parameters"] }
 
-Where the key is unique even for the stats; Field represents the parameter of tweet object on which we want to make stats, and ii followed by the name of the method realising a precise stats and its parameters. Field parameter can be:
+Where the key is unique even for the stats; "Field" represents the parameter of the tweet object on which thr user wants to make stats, and it is followed by the name of the method realising a precise stats and its parameters. Field parameter can be:
 
 - Favorites
 - Retweets
 - Hashtag
 
-Field "Favorites" refers to the parameter indicating the number of likes of a tweet, while fields Retweets and Hashtags refers respectively to the number of retweets of a tweet and the number of hashatag of a tweet. For each of these numerical parameters we have three methods that realises stats on tweets or on filtered tweets:
+Field "Favorites" refers to the parameter indicating the number of likes of a tweet, while fields "Retweets" and "Hashtag" refer respectively to the number of retweets of a tweet and the number of hashatags of a tweet. For each of these numerical parameters we have three methods that realise stats on tweets or on filtered tweets:
 
-- average, which returns the average of likes,retweets, or number of hashtags of tweet's list                                    
+- "average", which returns the average of likes,retweets, or number of hashtags of a tweet's list                                    
   Ex. { "1" : ["Favorites" , "average"]} returns likes average of list
-- frequency which returns the count of the post with a precise number of likes,retweets or hashtag, given as input by the user                                  
+- "frequency" which returns the count of the post with a precise number of likes,retweets or hashtag, given as input by the user                                  
   Ex. { "1" : ["Retweets","frequency",4]} returns the count of all the post on the page with four retweets
-- standardDeviation, which returns the standard deviation of likes,retweets, or number of hashtags of tweet's list                                          
+- "standardDeviation", which returns the standard deviation of likes,retweets, or number of hashtags of a tweet's list                                          
   Ex. { "1" : ["Hashtags","standardDeviation"]} returns Hashtags standardDeviation of list
   
-Even for the stats there is the possibility to make multiple stats on the same list of tweets sending only one request to the application. for the filters, every stats request in identified by a unique key and so in order to make a multiple stats request it needs to write:
+Even for the stats there is the possibility to make multiple stats on the same list of tweets sending only one request to the application. for the filters, every stats request is identified by a unique key and so in order to make a multiple stats request it needs to be written as:
 
-- Ex. {"1" : ["Hashtag","ferquency", 3],                                                          
-       "2" : ["Favorites","average"]}
+- Ex. {
+        "1" : ["Hashtag","ferquency", 3],                                                          
+        "2" : ["Favorites","average"]
+      }
        
-Furthermore it is possible to combine filters and stats requests in order to make stats on a filtered list of tweet. The only new thing we add in this case to the JSON syntax of the body of the request is the fact that it must be specified what are filters and what are stats as in the following example:
+Furthermore it is possible to combine filters and stats requests in order to make stats on a filtered list of tweets. The only new thing to add in this case to the JSON syntax of the body of the request is the specification on which single request is a filter and which is a stat as in the following example:
 
 - Ex.
+~~~
 {
-  "stats": {   "1" : ["Hashtag","ferquency", 3],                                                                                                
-               "2" : ["Favorites","average"]
-               },
-  "filters": {"1" : ["Hashtag","greater", 0],                                                          
-              "2" : ["Engagement","sortForRetweets", 40]
-              }
+  "stats": {  
+    "1" : ["Hashtag","ferquency", 3],                                                                                                
+    "2" : ["Favorites","average"]
+    },
+  "filters": {
+  "1" : ["Hashtag","greater", 0],                                                          
+  "2" : ["Engagement","sortForRetweets", 40]
+  }
 }
+~~~
 
-This request is sent to the route tweets/filter/stats. Besides it is not important in which order we specify filter and stats. We can both specify the stats and then the filters, or specify prevously the filters and then the stats.
+This request is sent to the route tweets/filter/stats. Besides it is not important in which order we specify filter and stats. We can both specify before the stats and then the filters, or specify prevously the filters and then the stats.
 
 # Application structure
 We will now show how the application is structured in packages and class. There are inside the package com.TiseniGiri.ProgettoTiseniGiri seven different packages:
