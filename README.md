@@ -125,12 +125,12 @@ This request is sent to the route tweets/filter/stats. Besides it is not importa
 We will now show how the application is structured in packages and class. Inside the package com.TiseniGiri.ProgettoTiseniGiri there are organized seven different packages:
 
 - Controller
-- Exceptions, containing exception classes and the exception handler
+- Exceptions
 - Filter
 - Model
 - Service
-- Stats, containing the classes which make the stats
-- Utility, containing some useful classes used by the application
+- Stats
+- Utility
 
 We will now see how the packages are structured in classes through the class diagrams:
 
