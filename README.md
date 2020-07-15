@@ -168,3 +168,17 @@ Package "Exception" is an important package containing fundamental classes for t
 ### Utility
 <img src = UML%20Diagrams/Class%20diagrams/Utility%20Class%20Diagram.jpg>
 Package "Utility" contains all the classes used by other classes of the application in order to help them to accomplish some results. It contains the classes "Download" and "Parser" used by the GeneralService class to download JSON file with tweets and to parse it into a tweet's list. Then here we also find the class "SingleKeyHashMap" used in order to throw the "DuplicatedKeyException", and the classes "ComparatorForFavorites" and "ComparatorForRetweets" used in the class "EngagementFilter" as sort rule in the algorythm sort of the List. Last but not least there is the class "UrlSetter" allowing the user to make stats and apply filters on tweets of a different official page than the default one.
+
+# When a Request is Made
+We will now analyse what the application does when a request is made:
+
+When user requests metadata, application works in this way:
+<img src = UML%20Diagrams/Sequence%20diagrams/metadata%20request.jpg>
+When user requests the unfiltered list, application does the following passages:
+<img src = UML%20Diagrams/Sequence%20diagrams/tweet%20request.jpg>
+When user requests filtered list of tweets application works like this:
+<img src = UML%20Diagrams/Sequence%20diagrams/filtered%20tweet%20request.JPG>
+When user requests stats on the unfiltered list are executed the follwing steps:
+>img src = UML%20Diagrams/Sequence%20diagrams/stats%20request.jpg>
+In the end when users ask stats on a filtered list of tweets application does the follwing complex operations:
+<img src = UML%20Diagrams/Sequence%20diagrams/filtered%20stats%20request.JPG>
