@@ -90,5 +90,23 @@ Field "Favorites" refers to the parameter indicating the number of likes of a tw
   Ex. { "1" : ["Retweets","frequency",4]} returns the count of all the post on the page with four retweets
 - standardDeviation, which returns the standard deviation of likes,retweets, or number of hashtags of tweet's list                                          
   Ex. { "1" : ["Hashtags","standardDeviation"]} returns Hashtags standardDeviation of list
+  
+Even for the stats there is the possibility to make multiple stats on the same list of tweets sending only one request to the application. for the filters, every stats request in identified by a unique key and so in order to make a multiple stats request it needs to write:
 
+- Ex. {"1" : ["Hashtag","ferquency", 3],                                                          
+       "2" : ["Favorites","average"]}
+       
+Furthermore it is possible to combine filters and stats requests in order to make stats on a filtered list of tweet. The only new thing we add in this case to the JSON syntax of the body of the request is the fact that it must be specified what are filters and what are stats as in the following example:
+
+- Ex.
+{
+  "stats": {   "1" : ["Hashtag","ferquency", 3],                                                                                                
+               "2" : ["Favorites","average"]
+               },
+  "filters": {"1" : ["Hashtag","greater", 0],                                                          
+              "2" : ["Engagement","sortForRetweets", 40]
+              }
+}
+
+This request is sent to the route tweets/filter/stats. Besides it is not important in which order we specify filter and stats. We can both specify the stats and then the filters, or specify prevously the filters and then the stats.
 
