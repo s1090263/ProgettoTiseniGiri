@@ -18,11 +18,6 @@ import com.fasterxml.jackson.databind.JsonMappingException;
 public class GeneralService {
 
 	/**
-	 * contains the data retrieved from the API as a string
-	 */
-	private static String data;
-
-	/**
 	 * Method used to get all the tweets requested
 	 * 
 	 * @param url the url that rapresents the request to the Twitter's API
@@ -31,7 +26,7 @@ public class GeneralService {
 	 * @throws JsonProcessingException
 	 */
 	public static List<Tweet> getTweets(String url) throws JsonMappingException, JsonProcessingException {
-		data = Downloader.downloadData(url);
+		String data = Downloader.downloadData(url);
 		List<Tweet> tweets = Parser.dataParser(data);
 		return tweets;
 	}

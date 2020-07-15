@@ -16,22 +16,14 @@ import java.net.URLConnection;
 public class Downloader {
 
 	/**
-	 * String representing the data downloaded
-	 */
-	private static String data = "";
-	/**
-	 * String containing the line that is being read
-	 */
-	private static String line = "";
-
-	/**
 	 * method that downloads the data from the API
 	 * 
 	 * @param url the url representing the request to the API
 	 * @return the data as a string
 	 */
 	public static String downloadData(String url) {
-
+		String data = "";
+		String line = "";
 		try {
 			URLConnection openConnection = new URL(url).openConnection();
 			openConnection.addRequestProperty("User-Agent",
