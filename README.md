@@ -76,7 +76,7 @@ Making a stats request is similar to making requests for filters, in fact the co
 
 { "key" : [ "Field", "Method's name", "Method's parameters"] }
 
-Where the key is unique even for the stats; "Field" represents the parameter of the tweet object on which thr user wants to make stats, and it is followed by the name of the method realising a precise stats and its parameters. Field parameter can be:
+Where the key is unique even for the stats; "Field" represents the parameter of the tweet object on which the user wants to make stats, and it is followed by the name of the method realising a precise stats and its parameters. Field parameter can be:
 
 - Favorites
 - Retweets
@@ -106,10 +106,10 @@ Furthermore it is possible to combine filters and stats requests in order to mak
   "stats": {  
     "1" : ["Hashtag","ferquency", 3],                                                                                                
     "2" : ["Favorites","average"]
-    },
+   },
   "filters": {
-  "1" : ["Hashtag","greater", 0],                                                          
-  "2" : ["Engagement","sortForRetweets", 40]
+    "1" : ["Hashtag","greater", 0],                                                          
+    "2" : ["Engagement","sortForRetweets", 40]
   }
 }
 ~~~
