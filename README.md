@@ -174,11 +174,15 @@ We will now analyse what the application does when a request is made:
 
 When user requests metadata, application works in this way:
 <img src = UML%20Diagrams/Sequence%20diagrams/metadata%20request.jpg>
+
 When user requests the unfiltered list, application does the following passages:
 <img src = UML%20Diagrams/Sequence%20diagrams/tweet%20request.jpg>
+
 When user requests filtered list of tweets application works like this:
 <img src = UML%20Diagrams/Sequence%20diagrams/filtered%20tweet%20request.JPG>
-When user requests stats on the unfiltered list are executed the following steps:
+
+When user requests stats on the unfiltered list the following steps  are executed:
 <img src = UML%20Diagrams/Sequence%20diagrams/stats%20request.jpg>
+
 In the end when users ask stats on a filtered list of tweets application does the following complex operations:
 <img src = UML%20Diagrams/Sequence%20diagrams/filtered%20stats%20request.JPG>
