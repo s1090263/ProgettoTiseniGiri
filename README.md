@@ -179,6 +179,6 @@ When user requests the unfiltered list, application does the following passages:
 When user requests filtered list of tweets application works like this:
 <img src = UML%20Diagrams/Sequence%20diagrams/filtered%20tweet%20request.JPG>
 When user requests stats on the unfiltered list are executed the follwing steps:
->img src = UML%20Diagrams/Sequence%20diagrams/stats%20request.jpg>
+<img src = UML%20Diagrams/Sequence%20diagrams/stats%20request.jpg>
 In the end when users ask stats on a filtered list of tweets application does the follwing complex operations:
 <img src = UML%20Diagrams/Sequence%20diagrams/filtered%20stats%20request.JPG>
