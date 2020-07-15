@@ -122,7 +122,7 @@ Furthermore it is possible to combine filters and stats requests in order to mak
 This request is sent to the route tweets/filter/stats. Besides it is not important in which order we specify filter and stats. We can both specify before the stats and then the filters, or specify prevously the filters and then the stats.
 
 # Application structure
-We will now show how the application is structured in packages and class. There are inside the package com.TiseniGiri.ProgettoTiseniGiri seven different packages:
+We will now show how the application is structured in packages and class. Inside the package com.TiseniGiri.ProgettoTiseniGiri there are organized seven different packages:
 
 - Controller
 - Exceptions, containing exception classes and the exception handler
@@ -132,23 +132,23 @@ We will now show how the application is structured in packages and class. There 
 - Stats, containing the classes which make the stats
 - Utility, containing some useful classes used by the application
 
-We will now see how the package ares structured in classes through the class diagrams:
+We will now see how the packages are structured in classes through the class diagrams:
 
 ### Model package
 <img src = UML%20Diagrams/Class%20diagrams/Model%20Class%20Diagram.jpg>
-Package Model contains the model of some objects as tweets,entities,hashtags,users and metadata
+Package "Model" contains the model of objects as tweets, entities, hashtags, users and metadata.
 
 ### Controller package
 <img src = UML%20Diagrams/Class%20diagrams/Controller%20Class%20Diagram.jpg>
-Package Controller contains the class controller which handles external requests made for example by postman
+Package "Controller" contains the class controller which handles external requests made, for example, by postman.
 
 ### Services
 <img src = UML%20Diagrams/Class%20diagrams/Services%20Class%20Diagram.jpg>
-Package Services contains the classes which realise services for the application. GeneralService deals with the request of the list of tweets and in this purpose it uses two external classes that are in package "Utility",allowing GeneralService to download the JSON file containing tweets and parse it into a list of tweets. Classes FilterService and StatsService respectively deal with the request of filtered list of tweets and of the stats on the list. These Classes inherit from the class GeneralService in order to have the necessary features to get the unfiltered list of tweets and both use a particular map stored in package Utility named "SingleKeyHashMAp" which throws an exception when there's a duplicated key in the map. Furthermore both classes FilterService and StatsService call methods of another class named "ExecuterForService" which allows us, using java reflection, to find the correct method applying the requested stats or filter.
+Package "Services" contains the classes which realise services for the application. GeneralService deals with the request of the list of tweets and in this purpose it uses two external classes that are in package "Utility", allowing GeneralService to download the JSON file containing tweets and parse it into a list of tweets. Classes "FilterService" and "StatsService" respectively deal with the request of filtered list of tweets and of the stats on the list. These Classes inherit from the class "GeneralService" in order to have the necessary features to get the unfiltered list of tweets and both use a particular map stored in package Utility named "SingleKeyHashMAp" which throws an exception when there's a duplicated key in the map. Furthermore both classes "FilterService" and "StatsService" call methods of another class named "ExecuterForService" which allows us, using java reflection, to find the correct method applying the requested stats or filter.
 
 ### Filters
 <img src = UML%20Diagrams/Class%20diagrams/Filter%20Class%20Diagram.jpg>
-Package filters is composed by the classes realising filters on the list of tweet. In this package there is another package called "InterfacesAndAbstractClasses" which contains an abstract class NumericalFilter and an interface named StringFilter. All the classes realising filters of numerical type inherit from NumericalFilter defining only the three methods greater,lower and equal because the method between is already implemented and similar for all classes(except for class Timefilter whcih redefines also the between method). All the classes realising filters which use a string as a parameter implement the interface StringFilter. Moreover we have two classes EngagementFilter and NumberFilter allowing us to select tweets with most valuable engagement parameters. These classes use other two classes stored in package Utility which are implementation of Comparator interface and permit to EngagementFilter to use the sort algorythm of lists in java
+Package "filters" is composed of the classes realising filters on the list of tweet. Inside this package we can find another package called "InterfacesAndAbstractClasses" which contains an abstract class "NumericalFilter" and an interface named "StringFilter". All the classes realising filters of numerical type inherit from "NumericalFilter" defining only the three methods "greater", "lower" and "equal" because the method between is already implemented and similar for all the classes (except for the class "Timefilter" which also redefines the method "between"). All the classes realising filters that use a string as a parameter implement the interface "StringFilter". Moreover we have two classes "EngagementFilter" and "NumberFilter" allowing us to select tweets with most valuable engagement parameters. These classes use other two classes stored in package Utility which are implementation of the java.util interface "Comparator" and enables Engagement filter to use the sort algorythm for lists in java.
 
 ### Stats
 <img src = UML%20Diagrams/Class%20diagrams/Stats%20Class%20Diagram.jpg>
