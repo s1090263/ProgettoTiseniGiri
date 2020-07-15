@@ -186,3 +186,12 @@ When user requests stats on the unfiltered list the following steps  are execute
 
 In the end when users ask stats on a filtered list of tweets application does the following complex operations:
 <img src = UML%20Diagrams/Sequence%20diagrams/filtered%20stats%20request.JPG>
+
+# Authors
+This project was entirely made by Matteo Giri and Lorenzo Tiseni.
+Matteo Giri focused on the Model package (apart the class "Metadata"), the Controller package, the ExceptionHandler package and on some classes of the Utility package (Downloader, Parser, UrlSetter).
+Lorenzo Tiseni worked on the filter and stats packages, made the class "Metadata" and the other classes of the Utility package (Comparators and SingleKeyHashMap).
+The services classes were done by both of us, together with the custom exceptions and the JUnit tests.
+In the making of the project we always communicated with each other, we either worked at the same place or, when we couldn't see, in video call. Hence, even if some parts of the application were made by one of the two, we always asked for the revision and advices of the other.
+
+
