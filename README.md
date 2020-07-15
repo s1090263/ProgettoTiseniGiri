@@ -86,4 +86,10 @@ Where the key is unique even for the stats; Field represents the parameter of tw
 
 Field "Favorites" refers to the parameter indicating the number of likes of a tweet, while fields Retweets and Hashtags refers respectively to the number of retweets of a tweet and the number of hashatag of a tweet. For each of these numerical parameters we have three methods that realises stats on tweets or on filtered tweets:
 
-- average, which returns the average of likes,retweets, or number of hashtags of tweet's list
+- average, which returns the average of likes,retweets, or number of hashtags of tweet's list                                    
+  Ex. { "1" : ["Favorites" , "average"]} returns likes average of list
+- frequency which returns the count of the post with a precise number of likes,retweets or hashtag, given as input by the user                                  
+  Ex. { "1" : ["Retweets","frequency",4]} returns the count of all the post on the page with four retweets
+- standardDeviation, which returns the standard deviation of likes,retweets, or number of hashtags of tweet's list                                          
+  Ex. { "1" : ["Hashtags","standardDeviation"]} returns Hashtags standardDeviation of list
+
