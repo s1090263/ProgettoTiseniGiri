@@ -95,7 +95,7 @@ Field "Favorites" refers to the parameter indicating the number of likes of a tw
 - "standardDeviation", which returns the standard deviation of likes,retweets, or number of hashtags of a tweet's list                                          
   Ex. { "1" : ["Hashtags","standardDeviation"]} returns Hashtags standardDeviation of list
   
-Even for the stats there is the possibility to make multiple stats on the same list of tweets sending only one request to the application. for the filters, every stats request is identified by a unique key and so in order to make a multiple stats request it needs to be written as:
+Even for the stats there is the possibility to make multiple stats on the same list of tweets sending only one request to the application.As for the filters, every stats request is identified by a unique key and so in order to make a multiple stats request it needs to be written as:
  
 ~~~
 {
