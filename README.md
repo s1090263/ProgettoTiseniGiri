@@ -14,7 +14,7 @@ The application gives the user the possibility to choose five different routes t
  * /tweets/stats : POST-request which gives back to the user stats requested in the body of the POST, on all available tweets
  * /tweets/filter/stats : POST-request which gives back to the user stats requested in the body of the POST, on tweets complying with filters requested in the same body
 
-Filter and stats are POST-requets, 'cause user need to specify which filters and statistics he wants. For this reason we will mow focus on how to make filters and stats requests.
+Filter and stats are POST-requets, 'cause user need to specify which filters and statistics he wants. For this reason we will now focus on how to make filters and stats requests.
 ### Making a filter request
 In order to make a filter request user must have a basic knowledge of JSON syntax, since the use of JSON format makes it easier to write the code which completes a filter request written in the body (in such way developers have the possibility to use java reflection libraries to search the correct method to applyto the filter). The application also gives the user the possibility to make multiple filter requests, each identified by a unique key. The correct JSON syntax to make a single filter request is the following:
 
