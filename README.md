@@ -20,7 +20,7 @@ In order to make a filter request user must have a basic knowledge of JSON synta
 
 { "key" : ["Field", "Method's name", "Method's parameters"] }
 
-"Key" parameter is the identifier for that signle request and it must be different for each filter, otherwise an exception will be thrown.
+"Key" parameter is the identifier for that single request and it must be different for each filter, otherwise an exception will be thrown.
 "Field" parameter represents the tweet's field that the user wants to filter and it must be one of the following words:
 
 * Favorites
